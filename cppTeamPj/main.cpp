@@ -2,5 +2,5 @@
 int main()
 {
 	Core core;
-	core.Run;
+	core.Run();
 }
