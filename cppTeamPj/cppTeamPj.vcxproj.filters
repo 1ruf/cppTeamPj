@@ -37,12 +37,18 @@
     <ClCompile Include="Console.cpp">
       <Filter>01.Core</Filter>
     </ClCompile>
+    <ClCompile Include="KeyContoller.cpp">
+      <Filter>01.Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Core.h">
-      <Filter>01.Core</Filter>
-    </ClInclude>
     <ClInclude Include="Console.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyContoller.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
   </ItemGroup>
