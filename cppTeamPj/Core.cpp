@@ -1,12 +1,28 @@
 #include "Core.h"
 
+
 void Core::Run()
 {
+	Scene currentScene = Scene::MENU;
 	while (true)
 	{
-		Update();
-		Render();
-		//FrameSync
+		switch (currentScene)
+		{
+		case Scene::MENU:
+			break;
+		case Scene::GAME:
+			break;
+		case Scene::PAUSE:
+			break;
+		case Scene::INFO:
+			break;
+		case Scene::EXIT:
+			break;
+		case Scene::FAIL:
+			break;
+		default:
+			break;
+		}
 	}
 }
 
