@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="Console.h" />
     <ClInclude Include="Core.h" />
+    <ClInclude Include="Enums.h" />
     <ClInclude Include="KeyContoller.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

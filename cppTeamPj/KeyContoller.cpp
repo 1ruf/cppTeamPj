@@ -1,37 +1,31 @@
-#include "KeyController.h"
+#include "KeyContoller.h"
 #include<Windows.h>
 
 Key KeyController()
 {
-	if (GetAsyncKeyState(VK_UP) & 0x8000)
+	if (GetAsyncKeyState('W') & 0x8000)
 	{
-		return Key::UP;
+		return Key::W;
 	}
-	if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+	if (GetAsyncKeyState('A') & 0x8000)
 	{
-		return Key::DOWN;
+		return Key::A;
+	}
+	if (GetAsyncKeyState('S') & 0x8000)
+	{
+		return Key::S;
+	}
+	if (GetAsyncKeyState('D') & 0x8000)
+	{
+		return Key::D;
 	}
 	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 	{
 		return Key::SPACE;
 	}
-	if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+	if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
 	{
-		return Key::LEFT;
-	}
-	if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
-	{
-		return Key::RIGHT;
-	}
-	if (GetAsyncKeyState('W') & 0x8000)
-	{
-		Sleep(60);
-		return Key::W;
-	}
-	if (GetAsyncKeyState('E') & 0x8000)
-	{
-		Sleep(60);
-		return Key::E;
+		return Key::ESC;
 	}
 	return Key::FAIL;
 }
