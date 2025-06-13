@@ -5,7 +5,8 @@ class Core
 public:
 	void Run();
 private:
-	void Update();
-	void Render();
+	void Init();
+	void Update(Scene& curScene);
+	void Render(Scene &curScene);
 };
 
