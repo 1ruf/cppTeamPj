@@ -2,10 +2,19 @@
 #include "Entity.h"
 class Enemy : public Entity
 {
+private:
+	struct Visual
+	{
+	public:
+		string rightVisual = "¡æ";
+		string leftVisual = "¡ç";
+		string upVisual = "¡è";
+		string downVisual = "¡é";
+	};
 public:
 	Enemy()
 	{
-		objectVisual = "¡æ";
+		//objectVisual = ;
 	}
 	virtual void move() override;
 };
