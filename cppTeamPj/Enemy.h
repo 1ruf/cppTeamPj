@@ -11,10 +11,28 @@ private:
 		string upVisual = "ก่";
 		string downVisual = "ก้";
 	};
+
+	enum class Direction
+	{
+		RIGHT,
+		LEFT,
+		UP,
+		DOWN
+	};
+
+	Visual visual;
+	Direction direction = Direction::RIGHT;
+
 public:
+
 	Enemy()
 	{
-		//objectVisual = ;
+		SetEnemy();
+		Spawn();
+		Move();
 	}
-	virtual void move() override;
+
+	void SetEnemy();
+	void Spawn();
+	virtual void Move() override;
 };

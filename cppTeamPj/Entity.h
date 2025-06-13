@@ -7,5 +7,5 @@ class Entity
 {
 public:
 	string objectVisual;
-	virtual void move() abstract;
+	virtual void Move() abstract;
 };
