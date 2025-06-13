@@ -3,3 +3,6 @@
 
 void TitleScene(Scene& _eCurScene);
 
+void TitleSceneRender();
+void TitleSceneUpdate();
+

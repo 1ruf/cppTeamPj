@@ -1,5 +1,6 @@
 #include "Core.h"
-
+#include "PlayerContoller.h"
+#include "Scenes.h"
 
 void Core::Run()
 {
@@ -9,8 +10,10 @@ void Core::Run()
 		switch (currentScene)
 		{
 		case Scene::MENU:
+			OpenTitleScene(currentScene);
 			break;
 		case Scene::GAME:
+			OpenGameScene(currentScene);
 			break;
 		case Scene::PAUSE:
 			break;
@@ -28,6 +31,7 @@ void Core::Run()
 
 void Core::Update()
 {
+	//HandleInput(_pos, _menu);
 }
 
 void Core::Render()

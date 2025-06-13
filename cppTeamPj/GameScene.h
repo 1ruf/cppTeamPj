@@ -1,5 +1,3 @@
+#include "Enums.h"
 #pragma once
-class GameScene
-{
-};
-
+void GameScene(Scene& _eCurScene);

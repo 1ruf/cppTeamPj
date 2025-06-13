@@ -25,4 +25,5 @@ void HandleInput(POS& _pos, Menu& _menu)
 		break;
 	default:
 		break;
+	}
 }

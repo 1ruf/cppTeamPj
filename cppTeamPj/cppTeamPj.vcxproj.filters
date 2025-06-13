@@ -55,6 +55,9 @@
     <ClCompile Include="TitleScene.cpp">
       <Filter>04.Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Scenes.cpp">
+      <Filter>04.Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
@@ -82,6 +85,9 @@
       <Filter>99.Headers</Filter>
     </ClInclude>
     <ClInclude Include="PlayerContoller.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
   </ItemGroup>
