@@ -40,6 +40,16 @@
     <ClCompile Include="KeyContoller.cpp">
       <Filter>01.Core</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="PlayerContoller.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="Entity.cpp">
+      <Filter>03.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>03.Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
@@ -54,5 +64,11 @@
     <ClInclude Include="Enums.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="PlayerContoller.h" />
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
 </Project>
