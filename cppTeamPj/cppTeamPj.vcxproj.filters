@@ -40,15 +40,20 @@
     <ClCompile Include="KeyContoller.cpp">
       <Filter>01.Core</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="GameScene.cpp" />
-    <ClCompile Include="PlayerContoller.cpp" />
-    <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="Entity.cpp">
       <Filter>03.Object</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
+    <ClCompile Include="Enemy.cpp">
       <Filter>03.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>04.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerContoller.cpp">
+      <Filter>01.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>04.Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,11 +69,20 @@
     <ClInclude Include="Enums.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="GameScene.h" />
-    <ClInclude Include="PlayerContoller.h" />
-    <ClInclude Include="Test.h" />
-    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="TitleScene.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerContoller.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
