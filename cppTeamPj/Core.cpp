@@ -2,10 +2,12 @@
 #include "PlayerContoller.h"
 #include "Scenes.h"
 #include "Console.h"
+#include "Player.h"
 
 void Core::Run()
 {
 	Scene currentScene = Scene::MENU;
+	Player player;
 	Init();
 	while (true)
 	{

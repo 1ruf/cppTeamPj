@@ -4,7 +4,7 @@
 void TitleScene(Scene& _eCurScene);
 
 void TitleSceneRender();
-void TitleSceneUpdate();
+void TitleSceneUpdate(Scene& _eCurScene);
 
-Menu TitleSceneInput(Menu& _eCurMenu);
+Menu TitleSceneInput();
 
