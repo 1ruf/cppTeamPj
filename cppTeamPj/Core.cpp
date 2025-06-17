@@ -7,11 +7,11 @@
 void Core::Run()
 {
 	Scene currentScene = Scene::MENU;
-	Player player;
+	Player player("¡Ü");
 	Init();
 	while (true)
 	{
-		Update(currentScene);
+		Update(currentScene,player);
 		Render(currentScene);
 	}
 }
@@ -21,7 +21,7 @@ void Core::Init()
 	SetConsoleSettings(800, 600, false, L"HIDER");
 }
 
-void Core::Update(Scene& curScene)
+void Core::Update(Scene& curScene, Player& player)
 {
 	while (true)
 	{

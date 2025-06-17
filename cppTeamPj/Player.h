@@ -1,22 +1,20 @@
 #pragma once
-class Player
+#include"Entity.h"
+
+#include<iostream>
+class Player : public Entity
 {
 private:
-	char _visual = '¡Ü';
-	int _score;
-	int _lives;
+    int life { 0 };
 public:
-	Player();
-	char GetVisual() const { return _visual; }
-	int GetScore() const { return _score; }
-	int GetLives() const { return _lives; }
+    Player(const string& visual)
+    {
+        objectVisual = visual;
+    }
 
-	void SetVisual(char visual) { _visual = visual; }
-	void SetScore(int score) { _score = score; }
-	void SetLives(int lives) { _lives = lives; }
-	void IncreaseScore(int amount) { _score += amount; }
-	void DecreaseLives(int amount) { _lives -= amount; }
+    void Move() override
+    {
+        std::cout << "ASD";
+    }
 };
-
-inline Player::Player() : _score(0), _lives(3) {}
 
