@@ -1,12 +1,13 @@
 ﻿#include "TitleScene.h"
 #include "Console.h"
+#include "KeyContoller.h"
 #include <fcntl.h>
 #include <io.h>
 
-void TitleScene(Scene& _eCurScene)
+void TitleScene(Menu& _eCurMenu)
 {
 	TitleSceneRender();
-	TitleSceneUpdate(_eCurScene);
+	TitleSceneUpdate(_eCurMenu);
 }
 
 void TitleSceneRender()
@@ -47,14 +48,55 @@ void TitleSceneRender()
 	cout << "게임 종료" << endl;
 }
 
-void TitleSceneUpdate(Scene& _eCurScene)
+void TitleSceneUpdate(Menu& _eCurMenu)
 {
-	TitleSceneInput();
+	Menu eMenu = TitleSceneInput();
+	switch (eMenu)
+	{
+	case Menu::START:
+		break;
+	case Menu::INFO:
+		break;
+	case Menu::CREDITS:
+		break;
+	case Menu::EXIT:
+		break;
+	case Menu::FAIL:
+		break;
+	default:
+		break;
+	}
 }
 
 Menu TitleSceneInput()
 {
-	COORD consoleSize = GetConsoleResolution();
-	
+	int selectIndex = 0;
+	Key eKey = KeyController();
+	switch (eKey)
+	{
+	case Key::A:
+		if (selectIndex == 0)
+		{
+			selectIndex = 3;
+		}
+		else
+			selectIndex--;
+		Sleep(100);
+		break;
+	case Key::D:
+		if (selectIndex == 3)
+			selectIndex = 0;
+		else
+			selectIndex++;
+		Sleep(100);
+		break;
+	case Key::SPACE:
+		if (selectIndex == 0) Menu::START;
+		else if (selectIndex == 1) Menu::INFO;
+		else if (selectIndex == 2) Menu::EXIT;
+		else if (selectIndex == 3) Menu::CREDITS;
+		else return Menu::FAIL;
+		break;
+	}
 	return Menu();
 }
