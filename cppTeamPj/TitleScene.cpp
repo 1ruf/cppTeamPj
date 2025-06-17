@@ -1,13 +1,10 @@
 ﻿#include "TitleScene.h"
-#include "Console.h"
 #include "KeyContoller.h"
-#include <fcntl.h>
-#include <io.h>
 
-void TitleScene(Menu& _eCurMenu)
+void TitleScene(Scene& _eCurScene,Menu& _eCurMenu)
 {
 	TitleSceneRender();
-	TitleSceneUpdate(_eCurMenu);
+	TitleSceneUpdate(_eCurScene,_eCurMenu);
 }
 
 void TitleSceneRender()
@@ -22,33 +19,28 @@ void TitleSceneRender()
 	wcout << L"	        |      ▄█    █▄     ▄█  ████████▄     ▄████████    ▄████████   |" << endl;
 	wcout << L"	        |     ███    ███   ███  ███   ▀███   ███    ███   ███    ███   |" << endl;
 	wcout << L"	        |     ███    ███   ███▌ ███    ███   ███    █▀    ███    ███   |" << endl;
-	wcout << L"	  ▄▄▄   |    ▄███▄▄▄▄███▄▄ ███▌ ███    ███  ▄███▄▄▄      ▄███▄▄▄▄██▀   |   ▄▄▄" << endl;
-	wcout << L"	        |   ▀▀███▀▀▀▀███▀  ███▌ ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀     |" << endl;
+	wcout << L"	  ▄▄▄█  |    ▄███▄▄▄▄███▄▄ ███▌ ███    ███  ▄███▄▄▄      ▄███▄▄▄▄██▀   |   █▄▄▄" << endl;
+	wcout << L"	     █  |   ▀▀███▀▀▀▀███▀  ███▌ ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀     |   █" << endl;
 	wcout << L"	        |     ███    ███   ███  ███    ███   ███    █▄  ▀███████████   |" << endl;
 	wcout << L"	        |     ███    ███   ███  ███   ▄███   ███    ███   ███    ███   |" << endl;
 	wcout << L"	        |     ███    █▀    █▀   ████████▀    ██████████   ███    ███   |" << endl;
 	wcout << L"	        |                                                 ███    ███   |" << endl;
-	COORD menuPos{ (consoleSize.X) / 2, 2 * (consoleSize.Y) / 3 };
+	COORD menuPos{ ((consoleSize.X) / 2) - 5, 2 * (consoleSize.Y) / 3 };
 
-	Gotoxy(menuPos.X - 21, menuPos.Y - 1);
-	wcout << L"┏";
-	Gotoxy(menuPos.X - 8, menuPos.Y - 1);
-	wcout << L"┓" << endl;
-	Gotoxy(menuPos.X - 21, menuPos.Y + 1);
-	wcout << L"┗";
-	Gotoxy(menuPos.X - 8, menuPos.Y + 1);
-	wcout << L"┛" << endl;
-	int curmode = _setmode(_fileno(stdout), prevmode);
+	
+	int curmode = _setmode(_fileno(stdout), prevmode);//현재 메뉴에 따라서
 
-	Gotoxy(menuPos.X - 18, menuPos.Y);
+	Gotoxy(menuPos.X - 23, menuPos.Y);
 	cout << "게임 시작" << endl;
-	Gotoxy(menuPos.X - 3, menuPos.Y);
+	Gotoxy(menuPos.X - 7, menuPos.Y);
 	cout << "게임 정보" << endl;
-	Gotoxy(menuPos.X + 12, menuPos.Y);
+	Gotoxy(menuPos.X + 7, menuPos.Y);
+	cout << "  크레딧" << endl;
+	Gotoxy(menuPos.X + 23, menuPos.Y);
 	cout << "게임 종료" << endl;
 }
 
-void TitleSceneUpdate(Menu& _eCurMenu)
+void TitleSceneUpdate(Scene& _eCurScene,Menu& _eCurMenu)
 {
 	Menu eMenu = TitleSceneInput();
 	switch (eMenu)
@@ -66,6 +58,45 @@ void TitleSceneUpdate(Menu& _eCurMenu)
 	default:
 		break;
 	}
+}
+
+void RenderCredit()
+{
+}
+
+void RenderInfo()
+{
+}
+
+void RenderBox(int curIndex)
+{
+	COORD consoleSize = GetConsoleResolution();
+	COORD menuPos { ((consoleSize.X) / 2) - 5, 2 * (consoleSize.Y) / 3 };
+
+	SelectBar selectBar;
+	COORD drawPos{ 0,0 };
+	switch (curIndex)
+	{
+	case 0:
+		drawPos.X = menuPos.X - 20;
+		drawPos.Y = menuPos.Y;
+		break;
+	case 1:
+		drawPos.X = menuPos.X - 4;
+		drawPos.Y = menuPos.Y;
+		break;
+	case 2:
+		drawPos.X = menuPos.X + 10;
+		drawPos.Y = menuPos.Y;
+		break;
+	case 3:
+		drawPos.X = menuPos.X + 26;
+		drawPos.Y = menuPos.Y;
+		break;
+	default:
+		break;
+	}
+	selectBar.Draw(drawPos);
 }
 
 Menu TitleSceneInput()
@@ -98,5 +129,6 @@ Menu TitleSceneInput()
 		else return Menu::FAIL;
 		break;
 	}
+	RenderBox(selectIndex);
 	return Menu();
 }

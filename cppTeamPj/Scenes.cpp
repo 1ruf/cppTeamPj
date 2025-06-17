@@ -7,7 +7,7 @@ void OpenGameScene(Scene& _eCurScene)
 	GameScene(_eCurScene);
 }
 
-void OpenTitleScene(Scene& _eCurScene)
+void OpenTitleScene(Scene& _eCurScene,Menu& _eCurMenu)
 {
-	TitleScene(_eCurScene);
+	TitleScene(_eCurScene,_eCurMenu);
 }

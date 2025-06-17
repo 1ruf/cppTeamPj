@@ -7,7 +7,7 @@ public:
 	void Run();
 private:
 	void Init();
-	void Update(Scene& curScene, Player& player);
+	void Update(Menu& curMenu,Scene& curScene, Player& player);
 	void Render(Scene &curScene);
 };
 
