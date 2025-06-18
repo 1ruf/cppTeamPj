@@ -46,14 +46,19 @@ void TitleSceneUpdate(Scene& _eCurScene,Menu& _eCurMenu)
 	switch (eMenu)
 	{
 	case Menu::START:
+		_eCurScene = Scene::GAME;
 		break;
 	case Menu::INFO:
+		_eCurScene = Scene::INFO;
 		break;
 	case Menu::CREDITS:
+		_eCurScene = Scene::CREDIT;
 		break;
 	case Menu::EXIT:
+		_eCurScene = Scene::EXIT;
 		break;
 	case Menu::FAIL:
+		_eCurScene = Scene::MENU;
 		break;
 	default:
 		break;
@@ -99,9 +104,9 @@ void RenderBox(int curIndex)
 	selectBar.Draw(drawPos);
 }
 
+int selectIndex = 0;//지워!!!!!!!
 Menu TitleSceneInput()
 {
-	int selectIndex = 0;
 	Key eKey = KeyController();
 	switch (eKey)
 	{
@@ -112,23 +117,25 @@ Menu TitleSceneInput()
 		}
 		else
 			selectIndex--;
-		Sleep(100);
+		system("cls");
+		Sleep(10);
 		break;
 	case Key::D:
 		if (selectIndex == 3)
 			selectIndex = 0;
 		else
 			selectIndex++;
-		Sleep(100);
+		system("cls");
+		Sleep(10);
 		break;
 	case Key::SPACE:
-		if (selectIndex == 0) Menu::START;
-		else if (selectIndex == 1) Menu::INFO;
-		else if (selectIndex == 2) Menu::EXIT;
-		else if (selectIndex == 3) Menu::CREDITS;
-		else return Menu::FAIL;
+		if (selectIndex == 0)return Menu::START;
+		else if (selectIndex == 1)return Menu::INFO;
+		else if (selectIndex == 2)return Menu::EXIT;
+		else if (selectIndex == 3)return Menu::CREDITS;
+		system("cls");
 		break;
 	}
 	RenderBox(selectIndex);
-	return Menu();
+	return Menu::FAIL;
 }
