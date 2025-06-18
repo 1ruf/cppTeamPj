@@ -37,6 +37,7 @@ void Core::Update(Menu& curMenu,Scene& curScene, Player& player)
 		case Scene::PAUSE:
 			break;
 		case Scene::INFO:
+			OpenInfoScene(curScene);
 			break;
 		case Scene::EXIT:
 			break;

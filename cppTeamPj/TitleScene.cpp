@@ -129,11 +129,11 @@ Menu TitleSceneInput()
 		Sleep(10);
 		break;
 	case Key::SPACE:
+		system("cls");
 		if (selectIndex == 0)return Menu::START;
 		else if (selectIndex == 1)return Menu::INFO;
 		else if (selectIndex == 2)return Menu::EXIT;
 		else if (selectIndex == 3)return Menu::CREDITS;
-		system("cls");
 		break;
 	}
 	RenderBox(selectIndex);
