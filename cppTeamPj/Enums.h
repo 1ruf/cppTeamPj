@@ -15,5 +15,5 @@ enum class Menu
 
 enum class Scene
 {
-	MENU, GAME, PAUSE, INFO, EXIT, FAIL
+	MENU, GAME,CREDIT, PAUSE, INFO, EXIT, FAIL
 };

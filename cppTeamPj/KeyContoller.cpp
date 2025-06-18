@@ -1,5 +1,4 @@
 #include "KeyContoller.h"
-#include<Windows.h>
 
 Key KeyController()
 {
