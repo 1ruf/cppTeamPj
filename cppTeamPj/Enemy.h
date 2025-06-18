@@ -1,7 +1,7 @@
 #pragma once
-#include <wincontypes.h>
 #include "Entity.h"
 #include "Console.h"
+#include <wincontypes.h>
 
 class Enemy : public Entity
 {
