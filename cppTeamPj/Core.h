@@ -1,6 +1,10 @@
 #pragma once
 #include"Enums.h"
+#include "PlayerContoller.h"
+#include "Scenes.h"
+#include "Console.h"
 #include "Player.h"
+
 class Core
 {
 public:

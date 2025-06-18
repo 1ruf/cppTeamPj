@@ -1,5 +1,7 @@
 #pragma once
 #include "Enums.h"
+#include "Console.h"
+#include "KeyContoller.h"
 
 void InfoScene(Scene& _eCurScene);
 

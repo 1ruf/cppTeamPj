@@ -3,6 +3,7 @@
 #include"Enums.h"
 #include <fcntl.h>
 #include <io.h>
+#include "KeyContoller.h"
 
 void TitleScene(Scene& _eCurScene,Menu& _eCurMenu);
 

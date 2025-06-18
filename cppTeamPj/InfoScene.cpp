@@ -1,6 +1,4 @@
 #include "InfoScene.h"
-#include "KeyContoller.h"
-#include "Console.h"
 
 void InfoScene(Scene& _eCurScene)
 {
@@ -10,6 +8,7 @@ void InfoScene(Scene& _eCurScene)
 
 void InfoSceneUpdate(Scene& _eCurScene)
 {
+	InfoSceneExit(_eCurScene);
 }
 
 void InfoSceneRender()
@@ -31,9 +30,5 @@ void InfoSceneExit(Scene& _eCurScene)
 	{
 		_eCurScene = Scene::MENU;
 		system("cls");
-	}
-	else if (eKey == Key::FAIL)
-	{
-		cout << "잘못된 입력입니다. ESC 키를 눌러주세요." << endl;
 	}
 }

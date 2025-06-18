@@ -1,6 +1,8 @@
+#pragma once
 #include "Enums.h"
 #include<Windows.h>
-#pragma once
+#include <iostream>
+
 void GameScene(Scene& _eCurScene);
 
 void GameSceneUpdate(Scene& _eCurScene);

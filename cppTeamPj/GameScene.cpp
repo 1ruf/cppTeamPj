@@ -1,5 +1,4 @@
 #include "GameScene.h"
-#include <iostream>
 
 void GameScene(Scene& _eCurScene)
 {
