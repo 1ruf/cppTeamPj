@@ -64,6 +64,8 @@
     <ClCompile Include="Sheild.cpp">
       <Filter>03.Object</Filter>
     </ClCompile>
+    <ClCompile Include="InfoScene.cpp" />
+    <ClCompile Include="EnemyManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
@@ -102,5 +104,7 @@
     <ClInclude Include="Sheild.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
+    <ClInclude Include="InfoScene.h" />
+    <ClInclude Include="EnemyManager.h" />
   </ItemGroup>
 </Project>
