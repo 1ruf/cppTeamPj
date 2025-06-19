@@ -13,7 +13,7 @@ void TitleSceneUpdate(Scene& _eCurScene,Menu& _eCurMenu);
 void RenderCredit();
 void RenderInfo();
 
-void RenderBox();
+void RenderBox(int curIndex);
 
 Menu TitleSceneInput();
 
@@ -21,13 +21,9 @@ Menu TitleSceneInput();
 class SelectBar
 {
 private:
-	int selectIndex{ 0 };
-
 	int _width = 13;
 	int _height = 3;
 public:
-	void SetIndex(int index);
-	int GetIndex();
 	SelectBar(int width = 15,int height = 5) 
 	{ 
 		_width = width;
@@ -52,6 +48,20 @@ public:
 
 		SetColor();
 		int curmode = _setmode(_fileno(stdout), prevmode);
+	}
+	void Erase(COORD pos)
+	{
+		int xVal = _width % 2 == 0 ? _width / 2 : _width / 2 - 1;
+		int yVal = _height % 2 == 0 ? _height / 2 : _height / 2 - 1;
+
+		Gotoxy(pos.X - xVal, pos.Y - yVal);
+		cout << " ";
+		Gotoxy(pos.X + xVal, pos.Y - yVal);
+		cout << " " << endl;
+		Gotoxy(pos.X - xVal, pos.Y + yVal);
+		cout << " ";
+		Gotoxy(pos.X + xVal, pos.Y + yVal);
+		cout << "  " << endl;
 	}
 };
 

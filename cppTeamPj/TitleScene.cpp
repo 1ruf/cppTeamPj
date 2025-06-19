@@ -72,15 +72,13 @@ void RenderInfo()
 {
 }
 
-void RenderBox()
+void RenderBox(int curIndex)
 {
 	COORD consoleSize = GetConsoleResolution();
 	COORD menuPos { ((consoleSize.X) / 2) - 5, 2 * (consoleSize.Y) / 3 };
 
 	SelectBar selectBar;
 	COORD drawPos{ 0,0 };
-
-	int curIndex = selectBar.GetIndex();
 	switch (curIndex)
 	{
 	case 0:
@@ -102,15 +100,13 @@ void RenderBox()
 	default:
 		break;
 	}
+	selectBar.Erase(drawPos);//이거를 나머지 다 지우게
 	selectBar.Draw(drawPos);
 }
-
+int selectIndex = 0;
 Menu TitleSceneInput()
 {
-	SelectBar sBar;
 	Key eKey = KeyController();
-	int selectIndex = sBar.GetIndex();
-	cout << selectIndex;
 	switch (eKey)
 	{
 	case Key::A:
@@ -120,36 +116,25 @@ Menu TitleSceneInput()
 		}
 		else
 			selectIndex--;
-		system("cls");
-		//Sleep(150);
+		//system("cls");
+		Sleep(150);
 		break;
 	case Key::D:
 		if (selectIndex == 3)
 			selectIndex = 0;
 		else
 			selectIndex++;
-		system("cls");
-		//Sleep(150);
+		//system("cls");
+		Sleep(150);
 		break;
 	case Key::SPACE:
-		system("cls");
+		//system("cls");
 		if (selectIndex == 0)return Menu::START;
 		else if (selectIndex == 1)return Menu::INFO;
 		else if (selectIndex == 2)return Menu::EXIT;
 		else if (selectIndex == 3)return Menu::CREDITS;
 		break;
 	}
-	sBar.SetIndex(selectIndex);
-	RenderBox();
+	RenderBox(selectIndex);
 	return Menu::FAIL;
-}
-
-void SelectBar::SetIndex(int index)
-{
-	selectIndex = index;
-}
-
-int SelectBar::GetIndex()
-{
-	return selectIndex;
 }
