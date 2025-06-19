@@ -1,5 +1,5 @@
 #include "Enemy.h"
-
+#include "Console.h"
 
 void Enemy::SetEnemy()
 {
@@ -56,9 +56,14 @@ void Enemy::Move()
 {
 	// 이전 위치에 있던 적 지워버리기
 	Gotoxy(currentPos.X, currentPos.Y);
-	std::cout << " ";
+	std::cout << "  ";
 
 	// 새로운 위치로 이동시키기
+	// C 스타일 캐스팅
+	//currentPos.X += directionVectors[(int)direction].X;
+
+	// C++ 형변환 연산자. static_cast<타입>(대상)
+	// C++ 형변환 연산자를 쓰면 컴파일때 미리 에러를 잡아준다.
 	currentPos.X += directionVectors[static_cast<int>(direction)].X;
 	currentPos.Y += directionVectors[static_cast<int>(direction)].Y;
 

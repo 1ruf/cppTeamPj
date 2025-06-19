@@ -1,7 +1,10 @@
 #pragma once
+#include <windows.h>
+#include <string>
+#include <iostream>
 #include "Entity.h"
-#include "Console.h"
-#include <wincontypes.h>
+
+using std::string;
 
 class Enemy : public Entity
 {
@@ -9,7 +12,6 @@ private:
 	// Visual을 담아둘 구조체
 	struct Visual
 	{
-	public:
 		string rightVisual = "→";
 		string leftVisual = "←";
 		string upVisual = "↑";
@@ -17,7 +19,8 @@ private:
 	};
 
 	// 움직일 방향 저장해둘 COORD 배열
-	COORD directionVectors[4];
+	// 차례대로 오른쪽, 왼쪽, 위, 아래
+	COORD directionVectors[4] = { {1,0}, {-1,0}, {0,-1}, {0,1} };
 
 	// enum class에 방향 만들어두기
 	enum class Direction
@@ -36,10 +39,7 @@ private:
 	COORD currentPos;
 
 public:
-	// 생성자 옆에  : ~~는 맴버 이니셜라이저 리스트라고 부르고
-	// 생성자 본문이 실행되기 전에 맴버 변수를 초기화시켜줍니다
-	// (AI 사용부분)
-	Enemy() : directionVectors { { 1, 0 }, { -1,0 }, { 0,-1 }, { 0,1 } }
+	Enemy()
 	{
 		SetEnemy();
 	}
