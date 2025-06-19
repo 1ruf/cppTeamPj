@@ -13,16 +13,21 @@ void TitleSceneUpdate(Scene& _eCurScene,Menu& _eCurMenu);
 void RenderCredit();
 void RenderInfo();
 
-void RenderBox(int curIndex);
+void RenderBox();
 
 Menu TitleSceneInput();
+
 
 class SelectBar
 {
 private:
+	int selectIndex{ 0 };
+
 	int _width = 13;
 	int _height = 3;
 public:
+	void SetIndex(int index);
+	int GetIndex();
 	SelectBar(int width = 15,int height = 5) 
 	{ 
 		_width = width;

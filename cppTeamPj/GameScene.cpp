@@ -13,8 +13,11 @@ void GameSceneUpdate(Scene& _eCurScene)
 
 void GameSceneRender()
 {
-	system("cls");
-	std::cout << "¤¤¤¤¤¤";
+	COORD centerPos = GetConsoleResolution();
+	centerPos.X /= 2;
+	centerPos.Y /= 2;
+
+	Sheild shield(centerPos);
 }
 
 

@@ -33,8 +33,8 @@ void TitleSceneRender()
 	cout << "게임 시작" << endl;
 	Gotoxy(menuPos.X - 7, menuPos.Y);
 	cout << "게임 정보" << endl;
-	Gotoxy(menuPos.X + 7, menuPos.Y);
-	cout << "  크레딧" << endl;
+	Gotoxy(menuPos.X + 9, menuPos.Y);
+	cout << "크레딧" << endl;
 	Gotoxy(menuPos.X + 23, menuPos.Y);
 	cout << "게임 종료" << endl;
 }
@@ -72,13 +72,15 @@ void RenderInfo()
 {
 }
 
-void RenderBox(int curIndex)
+void RenderBox()
 {
 	COORD consoleSize = GetConsoleResolution();
 	COORD menuPos { ((consoleSize.X) / 2) - 5, 2 * (consoleSize.Y) / 3 };
 
 	SelectBar selectBar;
 	COORD drawPos{ 0,0 };
+
+	int curIndex = selectBar.GetIndex();
 	switch (curIndex)
 	{
 	case 0:
@@ -103,10 +105,12 @@ void RenderBox(int curIndex)
 	selectBar.Draw(drawPos);
 }
 
-int selectIndex = 0;//지워!!!!!!!
 Menu TitleSceneInput()
 {
+	SelectBar sBar;
 	Key eKey = KeyController();
+	int selectIndex = sBar.GetIndex();
+	cout << selectIndex;
 	switch (eKey)
 	{
 	case Key::A:
@@ -117,7 +121,7 @@ Menu TitleSceneInput()
 		else
 			selectIndex--;
 		system("cls");
-		Sleep(10);
+		//Sleep(150);
 		break;
 	case Key::D:
 		if (selectIndex == 3)
@@ -125,7 +129,7 @@ Menu TitleSceneInput()
 		else
 			selectIndex++;
 		system("cls");
-		Sleep(10);
+		//Sleep(150);
 		break;
 	case Key::SPACE:
 		system("cls");
@@ -135,6 +139,17 @@ Menu TitleSceneInput()
 		else if (selectIndex == 3)return Menu::CREDITS;
 		break;
 	}
-	RenderBox(selectIndex);
+	sBar.SetIndex(selectIndex);
+	RenderBox();
 	return Menu::FAIL;
+}
+
+void SelectBar::SetIndex(int index)
+{
+	selectIndex = index;
+}
+
+int SelectBar::GetIndex()
+{
+	return selectIndex;
 }
