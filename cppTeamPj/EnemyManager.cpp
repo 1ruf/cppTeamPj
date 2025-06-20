@@ -30,6 +30,10 @@ void EnemyManager::EnemyUpdate()
             {
                 enemy.Move();   
             }
+            else
+            {
+                enemies.erase(enemies.begin());
+            }
         }
         moveTimer = 0.0f;
     }
