@@ -17,7 +17,7 @@ private:
     float timer = 0.0f;
 
     // 몇초마다 이동시킬지에 대한 변수
-    float moveInterval = 1.0f;
+    float moveInterval = 0.2f;
 
     // 현재 시간 체크용
     float moveTimer = 0.0f;
