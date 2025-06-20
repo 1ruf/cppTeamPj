@@ -1,5 +1,7 @@
 #include "GameScene.h"
 
+EnemyManager enemyManager;
+
 void GameScene(Scene& _eCurScene, Player& player)
 {
 	GameSceneRender();
@@ -8,6 +10,7 @@ void GameScene(Scene& _eCurScene, Player& player)
 
 void GameSceneUpdate(Scene& _eCurScene, Player& player)
 {
+	enemyManager.EnemyUpdate();
 	PlayerControl(player,_eCurScene);
 }
 
