@@ -11,9 +11,9 @@ private:
 
     float spawnTime = 3.0f;
 
-    float timer = 0.0f;
+    float spawnTimer = 0.0f;
 
-    float moveInterval = 0.2f;
+    float moveTime = 0.2f;
 
     float moveTimer = 0.0f;
 

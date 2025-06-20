@@ -14,15 +14,15 @@ void EnemyManager::EnemyUpdate()
         isFirstUpdate = false;
     }
 
-    timer += deltaTime;
-    if (timer >= spawnTime) 
+    spawnTimer += deltaTime;
+    if (spawnTimer >= spawnTime) 
     {
         SpawnEnemy();
-        timer = 0.0f;
+        spawnTimer = 0.0f;
     }
 
     moveTimer += deltaTime;
-    if (moveTimer >= moveInterval) 
+    if (moveTimer >= moveTime) 
     {
         for (Enemy& enemy : enemies) 
         {
@@ -36,6 +36,5 @@ void EnemyManager::EnemyUpdate()
 
 void EnemyManager::SpawnEnemy()
 {
-    Enemy enemy;
-    enemies.push_back(enemy);
+    enemies.emplace_back();
 }

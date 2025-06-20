@@ -28,7 +28,7 @@ private:
 	};
 
 	Visual visual;
-	Direction direction = Direction::RIGHT;
+	Direction direction;
 	COORD currentPos;
 
 public:
@@ -39,7 +39,7 @@ public:
 
 	void SetEnemy();
 
-	void Spawn(COORD coord);
+	void Spawn();
 
 	virtual void Move() override;
 };
