@@ -5,17 +5,14 @@
 #include <io.h>
 #include "KeyContoller.h"
 
-void TitleScene(Scene& _eCurScene,Menu& _eCurMenu);
+void TitleScene(Scene& _eCurScene);
 
 void TitleSceneRender();
-void TitleSceneUpdate(Scene& _eCurScene,Menu& _eCurMenu);
-
-void RenderCredit();
-void RenderInfo();
+void TitleSceneUpdate(Scene& _eCurScene);
 
 void RenderBox(int curIndex);
 
-Menu TitleSceneInput();
+Scene TitleSceneInput();
 
 
 class SelectBar
