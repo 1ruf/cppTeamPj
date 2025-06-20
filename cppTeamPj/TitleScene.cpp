@@ -106,7 +106,12 @@ Scene TitleSceneInput()
 		break;
 	case Key::SPACE:
 		system("cls");
-		if (selectIndex == 0)return Scene::GAME;
+		if (selectIndex == 0)
+		{
+			CrossAnimation(GetConsoleResolution(),1);
+			system("cls");
+			return Scene::GAME;
+		}
 		else if (selectIndex == 1)return Scene::INFO;
 		else if (selectIndex == 2)return Scene::CREDIT;
 		else if (selectIndex == 3)return Scene::EXIT;
@@ -135,6 +140,24 @@ void SelectBar::Draw(COORD pos, COLOR textColor, COLOR bgColor)
 
 	SetColor();
 	int curmode = _setmode(_fileno(stdout), prevmode);
+}
+void CrossAnimation(COORD _resolution, int _delayTime)
+{
+	for (int i = 0; i < _resolution.X / 2; ++i)
+	{
+		for (int j = 0; j < _resolution.Y; j += 2)
+		{
+			Gotoxy(i * 2, j);
+			cout << "  ";
+		}
+		for (int j = 1; j < _resolution.Y; j += 2)
+		{
+			Gotoxy(_resolution.X - 2 - i * 2, j);
+			cout << "  ";
+		}
+		Sleep(_delayTime);
+	}
+	SetColor();
 }
 
 void SelectBar::Erase(COORD pos)

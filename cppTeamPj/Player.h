@@ -2,6 +2,8 @@
 #include<iostream>
 #include"Entity.h"
 #include "Enums.h"
+#include "Console.h"
+#include <wincontypes.h>
 
 enum class CUR_MOVE
 {
@@ -23,11 +25,11 @@ public:
 	{
 		objectVisual = visual;
 	}
-
+	void PlayerControl(Player& player, Scene& _curScene);
+	void PlayerRender(Player plr);
     void Move() override { }
 };
 
-void PlayerControl(Player& player,Scene& _curScene);
-void PlayerRender(Player plr);
+
 
 

@@ -12,8 +12,8 @@ void TitleSceneUpdate(Scene& _eCurScene);
 
 void RenderBox(int curIndex);
 
+void CrossAnimation(COORD _resolution, int _delayTime);
 Scene TitleSceneInput();
-
 
 class SelectBar
 {
