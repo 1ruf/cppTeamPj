@@ -75,34 +75,39 @@ void RenderInfo()
 void RenderBox(int curIndex)
 {
 	COORD consoleSize = GetConsoleResolution();
-	COORD menuPos { ((consoleSize.X) / 2) - 5, 2 * (consoleSize.Y) / 3 };
+	COORD menuPos{ ((consoleSize.X) / 2) - 5, 2 * (consoleSize.Y) / 3 };
 
-	SelectBar selectBar;
-	COORD drawPos{ 0,0 };
+	SelectBar selectBar; //이거 나중에 진짜 map으로 하던 따로 빼던 바꿔야함. 일단 플레이어 만들러감
+
+	COORD pos0 = { menuPos.X - 20, menuPos.Y };
+	COORD pos1 = { menuPos.X - 4,  menuPos.Y };
+	COORD pos2 = { menuPos.X + 10, menuPos.Y };
+	COORD pos3 = { menuPos.X + 26, menuPos.Y };
+
+	selectBar.Erase(pos0);
+	selectBar.Erase(pos1);
+	selectBar.Erase(pos2);
+	selectBar.Erase(pos3);
+
 	switch (curIndex)
 	{
 	case 0:
-		drawPos.X = menuPos.X - 20;
-		drawPos.Y = menuPos.Y;
+		selectBar.Draw(pos0);
 		break;
 	case 1:
-		drawPos.X = menuPos.X - 4;
-		drawPos.Y = menuPos.Y;
+		selectBar.Draw(pos1);
 		break;
 	case 2:
-		drawPos.X = menuPos.X + 10;
-		drawPos.Y = menuPos.Y;
+		selectBar.Draw(pos2);
 		break;
 	case 3:
-		drawPos.X = menuPos.X + 26;
-		drawPos.Y = menuPos.Y;
+		selectBar.Draw(pos3);
 		break;
 	default:
 		break;
 	}
-	selectBar.Erase(drawPos);//이거를 나머지 다 지우게
-	selectBar.Draw(drawPos);
 }
+
 int selectIndex = 0;
 Menu TitleSceneInput()
 {
@@ -117,7 +122,7 @@ Menu TitleSceneInput()
 		else
 			selectIndex--;
 		//system("cls");
-		Sleep(150);
+		Sleep(50);
 		break;
 	case Key::D:
 		if (selectIndex == 3)
@@ -125,10 +130,10 @@ Menu TitleSceneInput()
 		else
 			selectIndex++;
 		//system("cls");
-		Sleep(150);
+		Sleep(50);
 		break;
 	case Key::SPACE:
-		//system("cls");
+		system("cls");
 		if (selectIndex == 0)return Menu::START;
 		else if (selectIndex == 1)return Menu::INFO;
 		else if (selectIndex == 2)return Menu::EXIT;
@@ -137,4 +142,40 @@ Menu TitleSceneInput()
 	}
 	RenderBox(selectIndex);
 	return Menu::FAIL;
+}
+
+void SelectBar::Draw(COORD pos, COLOR textColor, COLOR bgColor)
+{
+	int prevmode = _setmode(_fileno(stdout), _O_U16TEXT);
+
+	int xVal = _width % 2 == 0 ? _width / 2 : _width / 2 - 1;
+	int yVal = _height % 2 == 0 ? _height / 2 : _height / 2 - 1;
+	SetColor(textColor, bgColor);
+
+	Gotoxy(pos.X - xVal, pos.Y - yVal);
+	wcout << L"┏";
+	Gotoxy(pos.X + xVal, pos.Y - yVal);
+	wcout << L" ┓" << endl;
+	Gotoxy(pos.X - xVal, pos.Y + yVal);
+	wcout << L"┗";
+	Gotoxy(pos.X + xVal, pos.Y + yVal);
+	wcout << L" ┛" << endl;
+
+	SetColor();
+	int curmode = _setmode(_fileno(stdout), prevmode);
+}
+
+void SelectBar::Erase(COORD pos)
+{
+	int xVal = _width % 2 == 0 ? _width / 2 : _width / 2 - 1;
+	int yVal = _height % 2 == 0 ? _height / 2 : _height / 2 - 1;
+
+	Gotoxy(pos.X - xVal, pos.Y - yVal);
+	cout << " ";
+	Gotoxy(pos.X + xVal, pos.Y - yVal);
+	cout << "  " << endl;
+	Gotoxy(pos.X - xVal, pos.Y + yVal);
+	cout << " ";
+	Gotoxy(pos.X + xVal, pos.Y + yVal);
+	cout << "  " << endl;
 }

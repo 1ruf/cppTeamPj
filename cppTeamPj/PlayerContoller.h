@@ -1,6 +1,7 @@
 #pragma once
-#include"KeyContoller.h"
 #include"Enums.h"
+#include"KeyContoller.h"
+#include "Player.h"
 
 typedef struct _pos
 {
@@ -14,4 +15,4 @@ typedef struct _pos
 } POS, * PPOS;
 
 
-void HandleInput(POS& _pos, Menu& _menu);
+void HandleInput(Player& player, Scene& _curScene);

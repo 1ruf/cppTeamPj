@@ -2,10 +2,11 @@
 #include "GameScene.h"
 #include "TitleScene.h"
 #include "InfoScene.h"
+#include "Player.h"
 
-void OpenGameScene(Scene& _eCurScene)
+void OpenGameScene(Scene& _eCurScene, Player& player)
 {
-	GameScene(_eCurScene);
+	GameScene(_eCurScene, player);
 }
 
 void OpenTitleScene(Scene& _eCurScene,Menu& _eCurMenu)

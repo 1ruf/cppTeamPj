@@ -28,7 +28,7 @@ void Core::Update(Menu& curMenu,Scene& curScene, Player& player)
 			OpenTitleScene(curScene,curMenu);
 			break;
 		case Scene::GAME:
-			OpenGameScene(curScene);
+			OpenGameScene(curScene,player);
 			break;
 		case Scene::PAUSE:
 			break;

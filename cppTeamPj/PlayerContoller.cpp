@@ -1,27 +1,31 @@
 #include "PlayerContoller.h"
 
-void HandleInput(POS& _pos, Menu& _menu)
+void HandleInput(Player& player, Scene& _curScene)
 {
 	Key key = KeyController();
 	switch (key)
 	{
 	case Key::W:
-		_pos.y--;
+		player.SetDirection(CUR_MOVE::UP); 
+		system("cls");
 		break;
 	case Key::A:
-		_pos.x--;
+		player.SetDirection(CUR_MOVE::LEFT);
+		system("cls");
 		break;
 	case Key::S:
-		_pos.y++;
+		player.SetDirection(CUR_MOVE::DOWN);
+		system("cls");
 		break;
 	case Key::D:
-		_pos.x++;
+		player.SetDirection(CUR_MOVE::RIGHT);
+		system("cls");
 		break;
 	case Key::SPACE:
-		// Handle space key action
 		break;
 	case Key::ESC:
-		// Handle escape key action
+		_curScene = Scene::PAUSE;
+		system("cls");//clsµé Áö¿ì¼À
 		break;
 	default:
 		break;
