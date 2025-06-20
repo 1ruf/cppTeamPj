@@ -12,15 +12,15 @@ private:
 	// Visual을 담아둘 구조체
 	struct Visual
 	{
-		string rightVisual = "→";
-		string leftVisual = "←";
-		string upVisual = "↑";
-		string downVisual = "↓";
+		string rightVisual = "←";
+		string leftVisual = "→";
+		string upVisual = "↓";
+		string downVisual = "↑";
 	};
 
 	// 움직일 방향 저장해둘 COORD 배열
 	// 차례대로 오른쪽, 왼쪽, 위, 아래
-	COORD directionVectors[4] = { {1,0}, {-1,0}, {0,-1}, {0,1} };
+	COORD directionVectors[4] = { {1,0}, {-1,0}, {0,1}, {0,-1} };
 
 	// enum class에 방향 만들어두기
 	enum class Direction

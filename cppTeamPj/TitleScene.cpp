@@ -128,7 +128,7 @@ Menu TitleSceneInput()
 		Sleep(150);
 		break;
 	case Key::SPACE:
-		//system("cls");
+		system("cls");
 		if (selectIndex == 0)return Menu::START;
 		else if (selectIndex == 1)return Menu::INFO;
 		else if (selectIndex == 2)return Menu::EXIT;

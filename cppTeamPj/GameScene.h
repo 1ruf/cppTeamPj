@@ -3,6 +3,7 @@
 #include "Enums.h"
 #include<Windows.h>
 #include <iostream>
+#include "EnemyManager.h"
 
 void GameScene(Scene& _eCurScene);
 
