@@ -9,7 +9,7 @@ class EnemyManager
 private:
     std::vector<Enemy> enemies;
 
-    float spawnTime = 1.0f;
+    float spawnTime = 0.8f;
 
     float spawnTimer = 0.0f;
 

@@ -39,5 +39,8 @@ void EnemyManager::EnemyUpdate()
 
 void EnemyManager::SpawnEnemy()
 {
-    enemies.emplace_back();
+    for (int i = 0; i < 3; ++i)
+    {
+        enemies.emplace_back();
+    }
 }
