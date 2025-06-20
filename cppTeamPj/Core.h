@@ -1,6 +1,6 @@
 #pragma once
-#include"Enums.h"
 #include "PlayerContoller.h"
+#include "Enums.h"
 #include "Scenes.h"
 #include "Console.h"
 #include "Player.h"
@@ -11,7 +11,7 @@ public:
 	void Run();
 private:
 	void Init();
-	void Update(Menu& curMenu,Scene& curScene, Player& player);
+	void Update(Scene& curScene, Player& player);
 	void Render(Scene &curScene);
 };
 

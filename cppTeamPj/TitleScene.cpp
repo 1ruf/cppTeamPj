@@ -1,9 +1,9 @@
 ﻿#include "TitleScene.h"
 
-void TitleScene(Scene& _eCurScene,Menu& _eCurMenu)
+void TitleScene(Scene& _eCurScene)
 {
 	TitleSceneRender();
-	TitleSceneUpdate(_eCurScene,_eCurMenu);
+	TitleSceneUpdate(_eCurScene);
 }
 
 void TitleSceneRender()
@@ -39,37 +39,9 @@ void TitleSceneRender()
 	cout << "게임 종료" << endl;
 }
 
-void TitleSceneUpdate(Scene& _eCurScene,Menu& _eCurMenu)
+void TitleSceneUpdate(Scene& _eCurScene)
 {
-	Menu eMenu = TitleSceneInput();
-	switch (eMenu)
-	{
-	case Menu::START:
-		_eCurScene = Scene::GAME;
-		break;
-	case Menu::INFO:
-		_eCurScene = Scene::INFO;
-		break;
-	case Menu::CREDITS:
-		_eCurScene = Scene::CREDIT;
-		break;
-	case Menu::EXIT:
-		_eCurScene = Scene::EXIT;
-		break;
-	case Menu::FAIL:
-		_eCurScene = Scene::MENU;
-		break;
-	default:
-		break;
-	}
-}
-
-void RenderCredit()
-{
-}
-
-void RenderInfo()
-{
+	_eCurScene = TitleSceneInput();
 }
 
 void RenderBox(int curIndex)
@@ -109,7 +81,7 @@ void RenderBox(int curIndex)
 }
 
 int selectIndex = 0;
-Menu TitleSceneInput()
+Scene TitleSceneInput()
 {
 	Key eKey = KeyController();
 	switch (eKey)
@@ -134,14 +106,14 @@ Menu TitleSceneInput()
 		break;
 	case Key::SPACE:
 		system("cls");
-		if (selectIndex == 0)return Menu::START;
-		else if (selectIndex == 1)return Menu::INFO;
-		else if (selectIndex == 2)return Menu::EXIT;
-		else if (selectIndex == 3)return Menu::CREDITS;
+		if (selectIndex == 0)return Scene::GAME;
+		else if (selectIndex == 1)return Scene::INFO;
+		else if (selectIndex == 2)return Scene::EXIT;
+		else if (selectIndex == 3)return Scene::CREDIT;
 		break;
 	}
 	RenderBox(selectIndex);
-	return Menu::FAIL;
+	return Scene::MENU;
 }
 
 void SelectBar::Draw(COORD pos, COLOR textColor, COLOR bgColor)
