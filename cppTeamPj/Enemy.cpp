@@ -1,9 +1,12 @@
 #include "Enemy.h"
 #include "Console.h"
+#include "Sheild.h"
 
 void Enemy::SetEnemy()
 {
 	currentPos = GetConsoleResolution();
+	shieldPos.X = currentPos.X / 2;
+	shieldPos.Y = currentPos.Y / 2;
 
 	int randDir = rand() % 4;
 	switch (randDir)
@@ -50,4 +53,14 @@ void Enemy::Move()
 
 	Gotoxy(currentPos.X, currentPos.Y);
 	std::cout << objectVisual;
+}
+
+bool operator==(const COORD& FistCoord, const COORD& SecondCoord)
+{
+	return FistCoord.X == SecondCoord.X && FistCoord.Y == SecondCoord.Y;
+}
+
+bool Enemy::CheckShield()
+{
+	return currentPos == shieldPos;
 }

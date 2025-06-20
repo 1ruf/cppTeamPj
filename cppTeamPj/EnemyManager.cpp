@@ -26,7 +26,10 @@ void EnemyManager::EnemyUpdate()
     {
         for (Enemy& enemy : enemies) 
         {
-            enemy.Move();
+            if (!enemy.CheckShield())
+            {
+                enemy.Move();   
+            }
         }
         moveTimer = 0.0f;
     }

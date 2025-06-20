@@ -17,7 +17,7 @@ private:
 		string downVisual = "ก่";
 	};
 
-	COORD directionVectors[4] = { {1,0}, {-1,0}, {0,1}, {0,-1} };
+	COORD directionVectors[4] = { {-1,0}, {1,0}, {0,1}, {0,-1} };
 
 	enum class Direction
 	{
@@ -30,8 +30,10 @@ private:
 	Visual visual;
 	Direction direction;
 	COORD currentPos;
+	COORD shieldPos;
 
 public:
+
 	Enemy()
 	{
 		SetEnemy();
@@ -42,4 +44,6 @@ public:
 	void Spawn();
 
 	virtual void Move() override;
+
+	bool CheckShield();
 };
