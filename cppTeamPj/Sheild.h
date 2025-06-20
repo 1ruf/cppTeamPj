@@ -10,9 +10,9 @@ private:
     string shieldSymbol = "¢É";
     COORD position;
     COORD GetPosition() const;
-    bool DetectEnemy(COORD enemyPos);
     void SetPosition(COORD pos) { position = pos; }
 	void SetShieldColor(COLOR color) { shieldColor = color; }
 public:
+    bool DetectEnemy(COORD enemyPos);
     Sheild(COORD pos);
 };
