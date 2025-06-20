@@ -32,6 +32,7 @@ void Enemy::SetEnemy()
 		objectVisual = visual.downVisual;
 		direction = Direction::DOWN;
 		currentPos.X /= 2;
+		currentPos.Y -= 1;
 		break;
 	}
 	Spawn();
