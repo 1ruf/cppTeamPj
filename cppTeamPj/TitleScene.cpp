@@ -108,8 +108,8 @@ Scene TitleSceneInput()
 		system("cls");
 		if (selectIndex == 0)return Scene::GAME;
 		else if (selectIndex == 1)return Scene::INFO;
-		else if (selectIndex == 2)return Scene::EXIT;
-		else if (selectIndex == 3)return Scene::CREDIT;
+		else if (selectIndex == 2)return Scene::CREDIT;
+		else if (selectIndex == 3)return Scene::EXIT;
 		break;
 	}
 	RenderBox(selectIndex);
