@@ -15,7 +15,7 @@ void Core::Run()
 void Core::Init()
 {
 	SetConsoleSettings(800, 600, false, L"HIDER");
-	srand(unsigned int(time(nullptr))); 
+	srand((unsigned int)time(nullptr));
 }
 
 void Core::Update(Scene& curScene, Player& player)
