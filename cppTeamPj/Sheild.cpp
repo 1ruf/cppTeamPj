@@ -1,7 +1,7 @@
 #include "Sheild.h"
 #include <fcntl.h>
 
-Sheild::Sheild(COORD pos) : position(pos)
+Shield::Shield(COORD pos) : position(pos)
 {
  	Gotoxy(position.X, position.Y);
     SetColor(shieldColor);
@@ -9,12 +9,12 @@ Sheild::Sheild(COORD pos) : position(pos)
     SetColor(COLOR::WHITE);
 }
 
-COORD Sheild::GetPosition() const
+COORD Shield::GetPosition() const
 {
     return position;
 }
 
-bool Sheild::DetectEnemy(COORD enemyPos)
+bool Shield::DetectEnemy(COORD enemyPos)
 {
     return (enemyPos.X == position.X && enemyPos.Y == position.Y);
 }
