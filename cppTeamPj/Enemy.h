@@ -17,7 +17,7 @@ private:
 		string downVisual = "ก่";
 	};
 
-	COORD directionVectors[4] = { {-1,0}, {1,0}, {0,1}, {0,-1} };
+	COORD directionVectors[4] = { {-2,0}, {2,0}, {0,1}, {0,-1} };
 
 	enum class Direction
 	{

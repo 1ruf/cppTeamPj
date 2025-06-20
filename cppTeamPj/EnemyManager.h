@@ -9,11 +9,11 @@ class EnemyManager
 private:
     std::vector<Enemy> enemies;
 
-    float spawnTime = 3.0f;
+    float spawnTime = 1.0f;
 
     float spawnTimer = 0.0f;
 
-    float moveTime = 0.2f;
+    float moveTime = 0.05f;
 
     float moveTimer = 0.0f;
 
