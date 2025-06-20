@@ -3,7 +3,7 @@
 #include <io.h>
 #include <iostream>
 
-class Sheild
+class Shield
 {
 private:
 	COLOR shieldColor = COLOR::RED;
@@ -14,5 +14,5 @@ private:
 	void SetShieldColor(COLOR color) { shieldColor = color; }
 public:
     bool DetectEnemy(COORD enemyPos);
-    Sheild(COORD pos);
+    Shield(COORD pos);
 };

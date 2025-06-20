@@ -20,7 +20,7 @@ void GameSceneRender()
 	centerPos.X /= 2;
 	centerPos.Y /= 2;
 
-	Sheild shield(centerPos);
+	Shield shield(centerPos);
 }
 
 void PlayerControl(Player& player,Scene& _curScene)
