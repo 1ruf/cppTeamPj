@@ -93,16 +93,16 @@ Scene TitleSceneInput()
 		}
 		else
 			selectIndex--;
-		//system("cls");
-		Sleep(50);
+		RenderBox(selectIndex);
+		Sleep(150);
 		break;
 	case Key::D:
 		if (selectIndex == 3)
 			selectIndex = 0;
 		else
 			selectIndex++;
-		//system("cls");
-		Sleep(50);
+		RenderBox(selectIndex);
+		Sleep(150);
 		break;
 	case Key::SPACE:
 		system("cls");
@@ -117,7 +117,7 @@ Scene TitleSceneInput()
 		else if (selectIndex == 3)return Scene::EXIT;
 		break;
 	}
-	RenderBox(selectIndex);
+	
 	return Scene::MENU;
 }
 
