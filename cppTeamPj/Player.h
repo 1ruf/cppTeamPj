@@ -16,15 +16,14 @@ enum class CUR_MOVE
 class Player : public Entity
 {
 private:
+	COORD currentPos;
     int life { 0 };
 	CUR_MOVE curMove{ CUR_MOVE::UP };
 public:
-	void SetDirection(CUR_MOVE direction) { curMove = direction; }
+	Player(const string& visual);
 	CUR_MOVE GetDirection() { return curMove; }
-	Player(const string& visual)
-	{
-		objectVisual = visual;
-	}
+	void SetDirection(CUR_MOVE direction) { curMove = direction; }
+
 	void PlayerControl(Player& player, Scene& _curScene);
 	void PlayerRender(Player plr);
     void Move() override { }

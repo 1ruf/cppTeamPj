@@ -1,12 +1,12 @@
 #pragma once
 #include<iostream>
+#include<Windows.h>
+#include<string>
 using std::cout;
 using std::wcout;
 using std::endl;
-#include<string>
 using std::string;
 using std::wstring;
-#include<Windows.h>
 
 void SetConsoleSettings(int _width, int _height, bool _isFullScreen, const std::wstring& _title);
 void SetLockResize();

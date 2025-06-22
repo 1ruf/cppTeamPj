@@ -1,6 +1,11 @@
 #include "Player.h"
 #include "PlayerContoller.h"
 
+Player::Player(const string& visual)
+{
+	objectVisual = visual;
+}
+
 void Player::PlayerControl(Player & player, Scene & _curScene)
 {
 	HandleInput(player, _curScene);
@@ -33,6 +38,7 @@ void Player::PlayerRender(Player plr)
 	default:
 		break;
 	}
+	currentPos = renderPos;
 	Gotoxy(renderPos.X, renderPos.Y);
 	std::cout << plr.objectVisual;
 }

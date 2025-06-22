@@ -143,6 +143,7 @@ void SelectBar::Draw(COORD pos, COLOR textColor, COLOR bgColor)
 }
 void CrossAnimation(COORD _resolution, int _delayTime)
 {
+	SetColor(COLOR::WHITE, COLOR::GRAY);
 	for (int i = 0; i < _resolution.X / 2; ++i)
 	{
 		for (int j = 0; j < _resolution.Y; j += 2)
@@ -158,6 +159,20 @@ void CrossAnimation(COORD _resolution, int _delayTime)
 		Sleep(_delayTime);
 	}
 	SetColor();
+	for (int i = 0; i < _resolution.X / 2; ++i)
+	{
+		for (int j = 0; j < _resolution.Y; j += 2)
+		{
+			Gotoxy(i * 2, j);
+			cout << "  ";
+		}
+		for (int j = 1; j < _resolution.Y; j += 2)
+		{
+			Gotoxy(_resolution.X - 2 - i * 2, j);
+			cout << "  ";
+		}
+		Sleep(_delayTime / 2);
+	}
 }
 
 void SelectBar::Erase(COORD pos)
