@@ -35,25 +35,26 @@ void Enemy::SetEnemy()
 		currentPos.Y -= 1;
 		break;
 	}
-	Spawn();
-}
-
-void Enemy::Spawn()
-{
-	Gotoxy(currentPos.X, currentPos.Y);
-	std::cout << objectVisual;
 }
 
 void Enemy::Move()
 {
-	Gotoxy(currentPos.X, currentPos.Y);
-	std::cout << "  ";
-
+	Erase();
 	currentPos.X += directionVectors[static_cast<int>(direction)].X;
 	currentPos.Y += directionVectors[static_cast<int>(direction)].Y;
+	Render();
+}
 
+void Enemy::Render()
+{
 	Gotoxy(currentPos.X, currentPos.Y);
 	std::cout << objectVisual;
+}
+
+void Enemy::Erase()
+{
+	Gotoxy(currentPos.X, currentPos.Y);
+	std::cout << "  ";
 }
 
 bool operator==(const COORD& FistCoord, const COORD& SecondCoord)

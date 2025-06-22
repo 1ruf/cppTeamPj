@@ -41,9 +41,10 @@ public:
 
 	void SetEnemy();
 
-	void Spawn();
-
 	virtual void Move() override;
+
+	void Render();
+	void Erase();
 
 	bool CheckShield();
 };
