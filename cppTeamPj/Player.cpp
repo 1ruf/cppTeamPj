@@ -39,6 +39,6 @@ void Player::PlayerRender(Player plr)
 		break;
 	}
 	currentPos = renderPos;
-	Gotoxy(renderPos.X, renderPos.Y);
+	Gotoxy(renderPos.X, renderPos.Y);//그리는걸 여기서 하는게 맞나?
 	std::cout << plr.objectVisual;
 }
