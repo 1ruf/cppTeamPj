@@ -7,19 +7,19 @@ void HandleInput(Player& player, Scene& _curScene)
 	{
 	case Key::W:
 		player.SetDirection(CUR_MOVE::UP); 
-		system("cls");
+		player.Move();
 		break;
 	case Key::A:
 		player.SetDirection(CUR_MOVE::LEFT);
-		system("cls");
+		player.Move();
 		break;
 	case Key::S:
 		player.SetDirection(CUR_MOVE::DOWN);
-		system("cls");
+		player.Move();
 		break;
 	case Key::D:
 		player.SetDirection(CUR_MOVE::RIGHT);
-		system("cls");
+		player.Move();
 		break;
 	case Key::SPACE:
 		break;

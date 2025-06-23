@@ -22,11 +22,15 @@ private:
 public:
 	Player(const string& visual);
 	CUR_MOVE GetDirection() { return curMove; }
+	COORD GetPosition() { return currentPos; }
 	void SetDirection(CUR_MOVE direction) { curMove = direction; }
 
 	void PlayerControl(Player& player, Scene& _curScene);
 	void PlayerRender(Player plr);
-    void Move() override { }
+	void Move() override {
+		Gotoxy(currentPos.X, currentPos.Y);
+		cout << " ";
+	};
 };
 
 
