@@ -32,7 +32,7 @@ void EnemyManager::EnemyUpdate()
 			}
 			else
 			{
-				//enemies.erase(enemies.begin());
+				enemies.erase(enemies.begin());
 			}
 		}
 		moveTimer = 0.0f;
@@ -45,5 +45,4 @@ void EnemyManager::SpawnEnemy()
 {
 	enemies.emplace_back();
 	enemies.back().SetEnemy();
-	enemies.back().Render();
 }

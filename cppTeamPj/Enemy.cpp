@@ -12,24 +12,24 @@ void Enemy::SetEnemy()
 	switch (randDir)
 	{
 	case 0:
-		objectVisual = visual.rightVisual;
+		objectVisual = visual.rightMoveVisual;
 		direction = Direction::RIGHT;
 		currentPos.Y /= 2;
 		break;
 	case 1:
-		objectVisual = visual.leftVisual;
+		objectVisual = visual.leftMoveVisual;
 		direction = Direction::LEFT;
 		currentPos.Y /= 2;
 		currentPos.X = 0;
 		break;
 	case 2:
-		objectVisual = visual.upVisual;
+		objectVisual = visual.upMoveVisual;
 		direction = Direction::UP;
 		currentPos.X /= 2;
 		currentPos.Y = 0;
 		break;
 	case 3:
-		objectVisual = visual.downVisual;
+		objectVisual = visual.downMoveVisual;
 		direction = Direction::DOWN;
 		currentPos.X /= 2;
 		currentPos.Y -= 1;
