@@ -34,12 +34,12 @@ private:
 
 public:
 
-	Enemy()
+	Enemy(int randNum)
 	{
-		SetEnemy();
+		SetEnemy(randNum);
 	}
 
-	void SetEnemy();
+	void SetEnemy(int randNum);
 
 	virtual void Move() override;
 

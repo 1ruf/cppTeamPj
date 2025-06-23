@@ -2,14 +2,13 @@
 #include "Console.h"
 #include "Sheild.h"
 
-void Enemy::SetEnemy()
+void Enemy::SetEnemy(int randNum)
 {
 	currentPos = GetConsoleResolution();
 	shieldPos.X = currentPos.X / 2;
 	shieldPos.Y = currentPos.Y / 2;
 
-	int randDir = rand() % 4;
-	switch (randDir)
+	switch (randNum)
 	{
 	case 0:
 		objectVisual = visual.rightMoveVisual;
