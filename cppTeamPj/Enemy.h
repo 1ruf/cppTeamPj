@@ -11,10 +11,10 @@ class Enemy : public Entity
 private:
 	struct Visual
 	{
-		string rightVisual = "ก็";
-		string leftVisual = "กๆ";
-		string upVisual = "ก้";
-		string downVisual = "ก่";
+		string rightMoveVisual = "ก็";
+		string leftMoveVisual = "กๆ";
+		string upMoveVisual = "ก้";
+		string downMoveVisual = "ก่";
 	};
 
 	COORD directionVectors[4] = { {-2,0}, {2,0}, {0,1}, {0,-1} };
