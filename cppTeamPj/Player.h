@@ -1,6 +1,7 @@
 #pragma once
-#include<iostream>
-#include"Entity.h"
+#include <iostream>
+#include "IHitable.h"
+#include "Entity.h"
 #include "Enums.h"
 #include "Console.h"
 #include <wincontypes.h>
@@ -13,11 +14,11 @@ enum class CUR_MOVE
 	RIGHT
 };
 
-class Player : public Entity
+class Player : public Entity,public IHitable
 {
 private:
 	COORD currentPos;
-    int life { 0 };
+    int life { 3 };
 	CUR_MOVE curMove{ CUR_MOVE::UP };
 public:
 	Player(const string& visual);
@@ -31,8 +32,11 @@ public:
 		Gotoxy(currentPos.X, currentPos.Y);
 		cout << " ";
 	};
-};
 
+	// IHitable상속 (저거 순수가상함수라 무조건 구현&상속으로만 구현ㄱㄴ)
+	void Hit() override;
+};
+void GameOverAnimation(float delayTime);
 
 
 

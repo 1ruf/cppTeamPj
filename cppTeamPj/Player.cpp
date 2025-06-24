@@ -42,3 +42,35 @@ void Player::PlayerRender(Player plr)
 	Gotoxy(renderPos.X, renderPos.Y);//그리는걸 여기서 하는게 맞나?
 	std::cout << plr.objectVisual;
 }
+
+void Player::Hit()
+{
+	life--;
+	if (life <= 0)
+	{
+		GameOverAnimation(50.0f);
+		cout << "GAME OVER";
+	}
+}
+
+void GameOverAnimation(float delayTime)
+{
+	COORD resolution = GetConsoleResolution();
+	SetColor(COLOR::WHITE, COLOR::WHITE);
+	for (int i = 0; i < resolution.X / 2; ++i)
+	{
+		for (int j = 0; j < resolution.Y; ++j)
+		{
+			Gotoxy(i, j);
+			cout << " ";
+		}
+		for (int j = 0; j < resolution.Y; ++j)
+		{
+			Gotoxy(resolution.X - i, j);
+			cout << " ";
+		}
+		Sleep(delayTime);
+	}
+
+	SetColor();
+}

@@ -12,6 +12,7 @@ void GameSceneUpdate(Scene& _eCurScene, Player& player)
 {
 	enemyManager.EnemyUpdate();
 	player.PlayerControl(player,_eCurScene);
+	player.GetPosition();//위치 가져오는거임 @이찬민
 }
 
 void GameSceneRender()
