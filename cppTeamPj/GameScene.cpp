@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "ScoreManager.h"
 
 EnemyManager enemyManager;
 

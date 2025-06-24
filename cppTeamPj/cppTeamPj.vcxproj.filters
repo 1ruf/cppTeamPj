@@ -73,6 +73,7 @@
     <ClCompile Include="CreditScene.cpp">
       <Filter>04.Scene</Filter>
     </ClCompile>
+    <ClCompile Include="ScoreManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
