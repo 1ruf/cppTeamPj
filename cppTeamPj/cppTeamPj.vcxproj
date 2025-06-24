@@ -142,6 +142,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerContoller.cpp" />
     <ClCompile Include="Scenes.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="Sheild.cpp" />
     <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerContoller.h" />
     <ClInclude Include="Scenes.h" />
+    <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="Sheild.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>
