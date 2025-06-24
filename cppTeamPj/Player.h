@@ -1,6 +1,7 @@
 #pragma once
-#include<iostream>
-#include"Entity.h"
+#include <iostream>
+#include "IHitable.h"
+#include "Entity.h"
 #include "Enums.h"
 #include "Console.h"
 #include <wincontypes.h>
@@ -13,26 +14,30 @@ enum class CUR_MOVE
 	RIGHT
 };
 
-class Player : public Entity
+class Player : public Entity,public IHitable
 {
 private:
+    int life { 3 };
 	COORD currentPos;
-    int life { 0 };
 	CUR_MOVE curMove{ CUR_MOVE::UP };
 public:
 	Player(const string& visual);
+
 	CUR_MOVE GetDirection() { return curMove; }
 	COORD GetPosition() { return currentPos; }
-	void SetDirection(CUR_MOVE direction) { curMove = direction; }
 
+	void SetDirection(CUR_MOVE direction) { curMove = direction; }
 	void PlayerControl(Player& player, Scene& _curScene);
 	void PlayerRender(Player plr);
 	void Move() override {
 		Gotoxy(currentPos.X, currentPos.Y);
 		cout << " ";
 	};
-};
 
+	// IHitable상속 (저거 순수가상함수라 무조건 구현&상속으로만 구현ㄱㄴ)
+	void Hit() override;
+};
+void GameOverAnimation(float delayTime);
 
 
 
