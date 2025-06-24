@@ -5,13 +5,14 @@ EnemyManager enemyManager;
 
 void GameScene(Scene& _eCurScene, Player& player)
 {
+	ScoreManager scoreManager;
 	GameSceneRender();
-	GameSceneUpdate(_eCurScene,player);
+	GameSceneUpdate(_eCurScene,player, scoreManager);
 }
 
-void GameSceneUpdate(Scene& _eCurScene, Player& player)
+void GameSceneUpdate(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
 {
-	enemyManager.EnemyUpdate();
+	enemyManager.EnemyUpdate(scoreManager, player);
 	player.PlayerControl(player,_eCurScene);
 }
 

@@ -2,6 +2,9 @@
 #include <vector>
 #include "Enemy.h"
 #include <chrono>
+#include "Player.h"
+#include "ScoreManager.h"
+
 
 
 class EnemyManager
@@ -21,7 +24,7 @@ private:
     bool isFirstUpdate = true;
 
 public:
-    void EnemyUpdate();
+    void EnemyUpdate(ScoreManager& scoreManager, Player& player);
     void SpawnEnemy();
 };
 

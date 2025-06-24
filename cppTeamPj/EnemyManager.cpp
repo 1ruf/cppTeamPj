@@ -1,10 +1,7 @@
 #include "EnemyManager.h"
-#include "ScoreManager.h"
 
-
-void EnemyManager::EnemyUpdate()
+void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 {
-	ScoreManager scoreManaager;
 	auto currentTime = std::chrono::high_resolution_clock::now();
 	float deltaTime = 0.0f;
 	if (!isFirstUpdate)
@@ -34,7 +31,7 @@ void EnemyManager::EnemyUpdate()
 			}
 			else
 			{
-				scoreManaager.ScoreUp(1);
+				scoreManager.ScoreUp(2);
 				enemies.erase(enemies.begin());
 			}
 		}

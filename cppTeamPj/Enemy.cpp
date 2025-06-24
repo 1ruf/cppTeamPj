@@ -65,3 +65,8 @@ bool Enemy::CheckShield()
 {
 	return currentPos == shieldPos;
 }
+
+bool Enemy::CheckPlayer(COORD playerPos)
+{
+	return currentPos == playerPos;
+}

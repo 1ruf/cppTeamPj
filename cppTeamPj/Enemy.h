@@ -47,4 +47,5 @@ public:
 	void Erase();
 
 	bool CheckShield();
+	bool CheckPlayer(COORD playerPos);
 };
