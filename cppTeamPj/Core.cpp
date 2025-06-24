@@ -34,6 +34,10 @@ void Core::Update(Scene& curScene, Player& player)
 	case Scene::INFO:
 		OpenInfoScene(curScene);
 		break;
+	case Scene::GAMEOVER:
+		Gotoxy(0, 0);
+		cout << "GAME OVER";
+		break;
 	case Scene::PAUSE:
 		break;
 	case Scene::EXIT:

@@ -4,6 +4,7 @@
 Player::Player(const string& visual)
 {
 	objectVisual = visual;
+	life = 3;
 }
 
 void Player::PlayerControl(Player & player, Scene & _curScene)
@@ -45,19 +46,18 @@ void Player::PlayerRender(Player plr)
 
 void Player::Hit()
 {
-	life--;
 	if (life <= 0)
 	{
-		GameOverAnimation(50.0f);
-		cout << "GAME OVER";
+		GameOverAnimation(.8f);
 	}
+	else --life;
 }
 
 void GameOverAnimation(float delayTime)
 {
 	COORD resolution = GetConsoleResolution();
 	SetColor(COLOR::WHITE, COLOR::WHITE);
-	for (int i = 0; i < resolution.X / 2; ++i)
+	for (int i = 0; i <= resolution.X / 2; ++i)
 	{
 		for (int j = 0; j < resolution.Y; ++j)
 		{
@@ -73,4 +73,18 @@ void GameOverAnimation(float delayTime)
 	}
 
 	SetColor();
+	for (int i = 0; i <= resolution.X / 2; ++i)
+	{
+		for (int j = 0; j <= resolution.Y; ++j)
+		{
+			Gotoxy(i, j);
+			cout << " ";
+		}
+		for (int j = 0; j <= resolution.Y; ++j)
+		{
+			Gotoxy(resolution.X - i, j);
+			cout << " ";
+		}
+		Sleep(delayTime);
+	}
 }
