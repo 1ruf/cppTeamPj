@@ -10,6 +10,10 @@ void GameScene(Scene& _eCurScene, Player& player)
 	GameSceneUpdate(_eCurScene,player, scoreManager);
 }
 
+void GameSceneInit()
+{
+}
+
 void GameSceneUpdate(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
 {
 	enemyManager.EnemyUpdate(scoreManager, player);

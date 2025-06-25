@@ -3,11 +3,12 @@
 void Core::Run()
 {
 	Scene currentScene = Scene::MENU;
+	Scene beforeScene = Scene::FAIL;
 	Player player("¡Ü");
 	Init();
 	while (currentScene != Scene::EXIT)
 	{
-		Update(currentScene,player);
+		Update(currentScene,beforeScene,player);
 		Render(currentScene);
 	}
 }
@@ -15,14 +16,16 @@ void Core::Run()
 void Core::Init()
 {
 	SetConsoleSettings(800, 800, false, L"HIDER");
+	SetCursorVisual(false, 20);
 	srand((unsigned int)time(nullptr));
 }
 
-void Core::Update(Scene& curScene, Player& player)
+void Core::Update(Scene& curScene, Scene& befScene, Player& player)
 {
 	switch (curScene)
 	{
 	case Scene::MENU:
+		if (befScene != curScene) InitTitle();
 		OpenTitleScene(curScene);
 		break;
 	case Scene::GAME:
@@ -48,6 +51,7 @@ void Core::Update(Scene& curScene, Player& player)
 	default:
 		break;
 	}
+	befScene = curScene;
 }
 
 void Core::Render(Scene& curScene)

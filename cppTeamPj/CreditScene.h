@@ -5,6 +5,7 @@
 
 void CreditScene(Scene& _eCurScene);
 
+void CreditSceneInit();
 void CreditSceneUpdate(Scene& _eCurScene);
 void CreditSceneRender();
 

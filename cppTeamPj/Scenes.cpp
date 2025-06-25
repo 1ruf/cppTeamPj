@@ -10,15 +10,33 @@ void OpenGameScene(Scene& _eCurScene, Player& player)
 	GameScene(_eCurScene, player);
 }
 
+void InitGame()
+{
+	GameSceneInit();
+}
+
 void OpenTitleScene(Scene& _eCurScene)
 {
 	TitleScene(_eCurScene);
+}
+void InitTitle()
+{
+	TitleSceneInit();
 }
 void OpenInfoScene(Scene& _eCurScene)
 {
 	InfoScene(_eCurScene);
 }
+void InitInfo()
+{
+	InfoSceneInit();
+}
 void OpenCreditScene(Scene& _eCurScene)
 {
 	CreditScene(_eCurScene);
+}
+
+void InitCredit()
+{
+	InfoSceneInit();
 }

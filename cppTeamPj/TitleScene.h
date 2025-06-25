@@ -7,6 +7,7 @@
 
 void TitleScene(Scene& _eCurScene);
 
+void TitleSceneInit();
 void TitleSceneRender();
 void TitleSceneUpdate(Scene& _eCurScene);
 

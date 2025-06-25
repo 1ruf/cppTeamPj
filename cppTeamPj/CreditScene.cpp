@@ -6,6 +6,10 @@ void CreditScene(Scene& _eCurScene)
 	CreditSceneUpdate(_eCurScene);
 }
 
+void CreditSceneInit()
+{
+}
+
 void CreditSceneUpdate(Scene& _eCurScene)
 {
 	CreditSceneExit(_eCurScene);

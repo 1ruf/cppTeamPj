@@ -5,6 +5,7 @@
 
 void InfoScene(Scene& _eCurScene);
 
+void InfoSceneInit();
 void InfoSceneUpdate(Scene& _eCurScene);
 void InfoSceneRender();
 

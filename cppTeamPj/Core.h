@@ -11,7 +11,7 @@ public:
 	void Run();
 private:
 	void Init();
-	void Update(Scene& curScene, Player& player);
+	void Update(Scene& curScene, Scene& befScene, Player& player);
 	void Render(Scene &curScene);
 };
 

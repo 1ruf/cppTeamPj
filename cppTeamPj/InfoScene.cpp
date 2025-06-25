@@ -6,6 +6,10 @@ void InfoScene(Scene& _eCurScene)
 	InfoSceneUpdate(_eCurScene);
 }
 
+void InfoSceneInit()
+{
+}
+
 void InfoSceneUpdate(Scene& _eCurScene)
 {
 	InfoSceneExit(_eCurScene);

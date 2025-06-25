@@ -6,6 +6,11 @@ void TitleScene(Scene& _eCurScene)
 	TitleSceneUpdate(_eCurScene);
 }
 
+void TitleSceneInit()
+{
+	RenderBox(0);
+}
+
 void TitleSceneRender()
 {
 	COORD consoleSize = GetConsoleResolution();
