@@ -23,16 +23,22 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 	moveTimer += deltaTime;
 	if (moveTimer >= moveTime)
 	{
-		for (Enemy& enemy : enemies)
+		for (auto enemy = enemies.begin(); enemy != enemies.end(); )
 		{
-			if (!enemy.CheckShield())
+			if (enemy->CheckShield())
 			{
-				enemy.Move();
+				scoreManager.ScoreUp(1);
+				enemy = enemies.erase(enemy);
+			}
+			else if (enemy->CheckPlayer(player.GetPosition()))
+			{
+				player.Hit();
+				enemy = enemies.erase(enemy);
 			}
 			else
 			{
-				scoreManager.ScoreUp(2);
-				enemies.erase(enemies.begin());
+				enemy->Move();
+				++enemy;
 			}
 		}
 		moveTimer = 0.0f;

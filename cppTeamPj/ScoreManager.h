@@ -8,4 +8,3 @@ public:
 	void ScoreUp(int plusScore);
 	void ScoreRender();
 };
-
