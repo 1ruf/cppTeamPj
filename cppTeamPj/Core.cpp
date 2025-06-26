@@ -35,6 +35,7 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player)
 		OpenCreditScene(curScene);
 		break;
 	case Scene::INFO:
+		if (befScene != curScene) InitInfo();
 		OpenInfoScene(curScene);
 		break;
 	case Scene::GAMEOVER:
