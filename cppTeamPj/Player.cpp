@@ -6,6 +6,22 @@ Player::Player(const string& visual)
 	objectVisual = visual;
 	life = 3;
 }
+void Player::SetPlayerColor(COLOR color, float duration)
+{
+	SetPlayerColor(color);
+	Sleep(duration);//¾²À¾ ÀÌ°Å ¹Ù²ã¾ß µÉ¼öµµ?
+	SetPlayerColor(COLOR::WHITE);
+}
+
+void Player::SetPlayerColor(COLOR color)
+{
+	Gotoxy(currentPos.X,currentPos.Y);
+	cout << " ";
+	SetColor(color);
+	Gotoxy(currentPos.X,currentPos.Y);
+	cout << objectVisual;
+	SetColor();
+}
 
 void Player::PlayerControl(Player & player, Scene & _curScene)
 {
@@ -46,11 +62,13 @@ void Player::PlayerRender(Player plr)
 
 void Player::Hit()
 {
+	SetPlayerColor(COLOR::RED, 100);
+	life = life - 1;
 	if (life <= 0)
 	{
 		GameOverAnimation(.8f);
 	}
-	else --life;
+	cout << life;
 }
 
 void GameOverAnimation(float delayTime)

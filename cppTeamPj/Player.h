@@ -18,6 +18,7 @@ class Player : public Entity,public IHitable
 {
 private:
     int life { 3 };
+	COLOR playerColor = COLOR::WHITE;
 	COORD currentPos;
 	CUR_MOVE curMove{ CUR_MOVE::UP };
 public:
@@ -26,6 +27,8 @@ public:
 	CUR_MOVE GetDirection() { return curMove; }
 	COORD GetPosition() { return currentPos; }
 
+	void SetPlayerColor(COLOR color,float duration);
+	void SetPlayerColor(COLOR color);
 	void SetDirection(CUR_MOVE direction) { curMove = direction; }
 	void PlayerControl(Player& player, Scene& _curScene);
 	void PlayerRender(Player plr);
