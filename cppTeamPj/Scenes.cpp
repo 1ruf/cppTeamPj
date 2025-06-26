@@ -5,9 +5,9 @@
 #include "CreditScene.h"
 #include "Player.h"
 
-void OpenGameScene(Scene& _eCurScene, Player& player)
+void OpenGameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
 {
-	GameScene(_eCurScene, player);
+	GameScene(_eCurScene, player,scoreManager);
 }
 
 void InitGame()

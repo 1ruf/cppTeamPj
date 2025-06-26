@@ -3,9 +3,8 @@
 
 EnemyManager enemyManager;
 
-void GameScene(Scene& _eCurScene, Player& player)
+void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
 {
-	ScoreManager scoreManager;
 	GameSceneRender();
 	GameSceneUpdate(_eCurScene,player, scoreManager);
 }
