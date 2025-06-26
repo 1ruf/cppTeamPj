@@ -5,10 +5,11 @@ void Core::Run()
 	Scene currentScene = Scene::MENU;
 	Scene beforeScene = Scene::FAIL;
 	Player player("¡Ü");
+	ScoreManager scoreManager;
 	Init();
 	while (currentScene != Scene::EXIT)
 	{
-		Update(currentScene,beforeScene,player);
+		Update(currentScene,beforeScene,player, scoreManager);
 		Render(currentScene);
 	}
 }
@@ -20,7 +21,7 @@ void Core::Init()
 	srand((unsigned int)time(nullptr));
 }
 
-void Core::Update(Scene& curScene, Scene& befScene, Player& player)
+void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager& scoreManager)
 {
 	switch (curScene)
 	{
@@ -29,7 +30,7 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player)
 		OpenTitleScene(curScene);
 		break;
 	case Scene::GAME:
-		OpenGameScene(curScene, player);
+		OpenGameScene(curScene, player, scoreManager);
 		break;
 	case Scene::CREDIT:
 		OpenCreditScene(curScene);

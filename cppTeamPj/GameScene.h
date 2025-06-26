@@ -7,7 +7,7 @@
 #include <iostream>
 #include "EnemyManager.h"
 
-void GameScene(Scene& _eCurScene, Player& player);
+void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager);
 
 void GameSceneInit();
 void GameSceneUpdate(Scene& _eCurScene, Player& player, ScoreManager& scoreManager);

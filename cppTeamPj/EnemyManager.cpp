@@ -23,22 +23,27 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 	moveTimer += deltaTime;
 	if (moveTimer >= moveTime)
 	{
-		for (auto enemy = enemies.begin(); enemy != enemies.end(); )
+		int enemyCount = 0;
+		for (auto iterator = enemies.begin(); iterator != enemies.end(); )
 		{
-			if (enemy->CheckShield())
+			if (iterator->CheckShield())
 			{
-				scoreManager.ScoreUp(1);
-				enemy = enemies.erase(enemy);
+				iterator = enemies.erase(iterator);
+				enemyCount++;
+				if (enemyCount >= 3)
+				{
+					scoreManager.ScoreUp(1);
+				}
 			}
-			else if (enemy->CheckPlayer(player.GetPosition()))
+			else if (iterator->CheckPlayer(player.GetPosition()))
 			{
 				player.Hit();
-				enemy = enemies.erase(enemy);
+				iterator = enemies.erase(iterator);
 			}
 			else
 			{
-				enemy->Move();
-				++enemy;
+				iterator->Move();
+				++iterator;
 			}
 		}
 		moveTimer = 0.0f;
