@@ -1,4 +1,5 @@
 ﻿#include "TitleScene.h"
+int selectIndex = 0;
 
 void TitleScene(Scene& _eCurScene)
 {
@@ -8,7 +9,7 @@ void TitleScene(Scene& _eCurScene)
 
 void TitleSceneInit()
 {
-	RenderBox(0);
+	RenderBox(selectIndex);
 }
 
 void TitleSceneRender()
@@ -85,7 +86,6 @@ void RenderBox(int curIndex)
 	}
 }
 
-int selectIndex = 0;
 Scene TitleSceneInput()
 {
 	Key eKey = KeyController();
