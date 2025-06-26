@@ -8,7 +8,6 @@ void TitleScene(Scene& _eCurScene)
 
 void TitleSceneInit()
 {
-	cout << "테스트";
 	RenderBox(0);
 }
 
