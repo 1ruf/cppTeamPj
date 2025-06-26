@@ -1,6 +1,7 @@
 #include "ScoreManager.h"
 #include "Console.h"
 
+
 void ScoreManager::ScoreUp(int plusScore)
 {
 	score += plusScore;
