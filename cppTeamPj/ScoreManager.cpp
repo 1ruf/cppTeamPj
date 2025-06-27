@@ -52,3 +52,8 @@ int ScoreManager::GetScore()
 {
 	return score;
 }
+
+void ScoreManager::Initialize()
+{
+	score = 0;
+}

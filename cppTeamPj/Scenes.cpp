@@ -7,14 +7,14 @@
 #include "Player.h"
 #include "GameOverManager.h"
 
-void OpenGameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
+void OpenGameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager, EnemyManager& enemyManager)
 {
-	GameScene(_eCurScene, player,scoreManager);
+	GameScene(_eCurScene, player,scoreManager, enemyManager);
 }
 
-void InitGame(ScoreManager& scoreManager,Player& player)
+void InitGame(ScoreManager& scoreManager,Player& player, EnemyManager& enemyManager)
 {
-	GameSceneInit(scoreManager,player);
+	GameSceneInit(scoreManager,player, enemyManager);
 }
 
 void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager,GameOverManager& gameoverManager)

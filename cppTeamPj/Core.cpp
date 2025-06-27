@@ -8,10 +8,12 @@ void Core::Run()
 	Player player("¡Ü",&currentScene);
 	ScoreManager scoreManager;
 	GameOverManager gameoverManager;
+	EnemyManager enemyManager;
+
 	Init();
 	while (currentScene != Scene::EXIT)
 	{
-		Update(currentScene,beforeScene,player, scoreManager, gameoverManager);
+		Update(currentScene,beforeScene,player, scoreManager, gameoverManager, enemyManager);
 		Render(currentScene);
 	}
 }
@@ -36,7 +38,7 @@ void Core::Init()
 	system("cls");
 }
 
-void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager& scoreManager, GameOverManager& gameoverManager)
+void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager& scoreManager, GameOverManager& gameoverManager, EnemyManager& enemyManager)
 {
 	switch (curScene)
 	{
@@ -45,8 +47,8 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager
 		OpenTitleScene(curScene);
 		break;
 	case Scene::GAME:
-		if (CheckSceneInit(befScene, curScene) == false) InitGame(scoreManager, player);
-		OpenGameScene(curScene, player, scoreManager);
+		if (CheckSceneInit(befScene, curScene) == false) InitGame(scoreManager, player, enemyManager);
+		OpenGameScene(curScene, player, scoreManager, enemyManager);
 		break;
 	case Scene::CREDIT:
 		if (CheckSceneInit(befScene, curScene) == false) InitCredit();

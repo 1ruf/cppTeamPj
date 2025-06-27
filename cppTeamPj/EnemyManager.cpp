@@ -122,3 +122,11 @@ void EnemyManager::DownMoveTime(float downTime)
 {
 	moveTime -= downTime;
 }
+
+void EnemyManager::Initialize()
+{
+	isFirstUpdate = true;
+	spawnTime = defaultSpawnTime;
+	moveTime = defaultMoveTime;
+}
+

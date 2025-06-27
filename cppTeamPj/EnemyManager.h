@@ -13,10 +13,12 @@ private:
     std::vector<ShieldEnemy> shieldEnemies;
 
     float spawnTime = 1.0f;
+    float defaultSpawnTime = 1.0f;
 
     float spawnTimer = 0.0f;
 
     float moveTime = 0.04f;
+    float defaultMoveTime = 0.04f;
 
     float moveTimer = 0.0f;
 
@@ -28,5 +30,6 @@ public:
     void SpawnEnemy();
     void DownSpawnTime(float downTime);
     void DownMoveTime(float downTime);
+    void Initialize();
 };
 

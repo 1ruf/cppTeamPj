@@ -5,6 +5,7 @@
 #include "Console.h"
 #include "Player.h"
 #include "ScoreManager.h"
+#include "EnemyManager.h"
 #include "GameOverManager.h"
 
 
@@ -14,7 +15,7 @@ public:
 	void Run();
 private:
 	void Init();
-	void Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager& scoreManager, GameOverManager& gameoverManager);
+	void Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager& scoreManager, GameOverManager& gameoverManager, EnemyManager& enemyManager);
 	void Render(Scene &curScene);
 };
 

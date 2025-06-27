@@ -3,9 +3,10 @@
 #include "Player.h"
 #include "ScoreManager.h"
 #include "GameOverManager.h"
+#include "EnemyManager.h"
 
-void OpenGameScene(Scene& _eCurScene,Player& player, ScoreManager& scoreManager);
-void InitGame(ScoreManager& scoreManager, Player& player);
+void OpenGameScene(Scene& _eCurScene,Player& player, ScoreManager& scoreManager, EnemyManager& enemyManager);
+void InitGame(ScoreManager& scoreManager, Player& player, EnemyManager& enemyManager);
 void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager,GameOverManager& gameoverManager);
 void InitGameOver();
 void OpenTitleScene(Scene& _eCurScene);
