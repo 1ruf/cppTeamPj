@@ -3,7 +3,7 @@
 
 void ShieldEnemy::Render()
 {
-	SetColor(COLOR::RED, COLOR::BLACK);
+	SetColor(COLOR::LIGHT_RED, COLOR::BLACK);
 	Gotoxy(currentPos.X, currentPos.Y);
 	std::cout << objectVisual;
 	SetColor(COLOR::WHITE, COLOR::BLACK);

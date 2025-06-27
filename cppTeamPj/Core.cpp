@@ -32,7 +32,7 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager
 		OpenTitleScene(curScene);
 		break;
 	case Scene::GAME:
-		if (CheckSceneInit(befScene, curScene) == false) InitGame();
+		if (CheckSceneInit(befScene, curScene) == false) InitGame(scoreManager);
 		OpenGameScene(curScene, player, scoreManager);
 		break;
 	case Scene::CREDIT:

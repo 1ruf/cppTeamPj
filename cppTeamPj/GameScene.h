@@ -6,10 +6,11 @@
 #include <Windows.h>
 #include <iostream>
 #include "EnemyManager.h"
+#include "ScoreManager.h"
 
 void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager);
 
-void GameSceneInit();
+void GameSceneInit(ScoreManager& scoreManager);
 void GameSceneUpdate(Scene& _eCurScene, Player& player, ScoreManager& scoreManager);
 void GameSceneRender();
 
