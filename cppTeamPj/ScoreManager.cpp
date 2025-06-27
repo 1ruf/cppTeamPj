@@ -4,10 +4,11 @@
 #include <io.h>
 #include <sstream>
 
+
 void ScoreManager::ScoreUp(int plusScore)
 {
 	score += plusScore;
-	ScoreRender();    
+	ScoreRender();
 }
 
 void ScoreManager::ScoreRender()
@@ -45,4 +46,9 @@ void ScoreManager::ScoreRender()
         coord.X += 6;
     }
 	int curmode = _setmode(_fileno(stdout), prevmode);
+}
+
+int ScoreManager::GetScore()
+{
+	return score;
 }

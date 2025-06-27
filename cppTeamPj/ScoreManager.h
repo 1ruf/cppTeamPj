@@ -55,4 +55,5 @@ private:
 public:
 	void ScoreUp(int plusScore);
 	void ScoreRender();
+	int GetScore();
 };

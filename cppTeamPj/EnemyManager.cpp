@@ -1,5 +1,6 @@
 #include "EnemyManager.h"
 
+
 void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 {
 	auto currentTime = std::chrono::high_resolution_clock::now();
@@ -33,6 +34,8 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 				if (enemyCount >= 3)
 				{
 					scoreManager.ScoreUp(1);
+					DownSpawnTime(0.006f);
+					DownMoveTime(0.0001f);
 				}
 			}
 			else if (iterator->CheckPlayer(player.GetPosition()))
@@ -75,4 +78,14 @@ void EnemyManager::SpawnEnemy()
 	{
 		enemies.emplace_back(arr[i]);
 	}
+}
+
+void EnemyManager::DownSpawnTime(float downTime)
+{
+	spawnTime -= downTime;
+}
+
+void EnemyManager::DownMoveTime(float downTime)
+{
+	moveTime -= downTime;
 }
