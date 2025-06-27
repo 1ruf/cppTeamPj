@@ -77,6 +77,7 @@
     <ClCompile Include="GameOverScene.cpp">
       <Filter>04.Scene</Filter>
     </ClCompile>
+    <ClCompile Include="GameOverManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
@@ -133,6 +134,7 @@
     <ClInclude Include="GameOverScene.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
+    <ClInclude Include="GameOverManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

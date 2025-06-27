@@ -2,10 +2,11 @@
 #include "Enums.h"
 #include "Player.h"
 #include "ScoreManager.h"
+#include "GameOverManager.h"
 
 void OpenGameScene(Scene& _eCurScene,Player& player, ScoreManager& scoreManager);
 void InitGame();
-void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager);
+void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager,GameOverManager& gameoverManager);
 void InitGameOver();
 void OpenTitleScene(Scene& _eCurScene);
 void InitTitle();

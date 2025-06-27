@@ -1,4 +1,5 @@
 #include "Core.h"
+#include "GameOverManager.h"
 
 void Core::Run()
 {
@@ -6,10 +7,11 @@ void Core::Run()
 	Scene beforeScene = Scene::FAIL;
 	Player player("●",&currentScene);
 	ScoreManager scoreManager;
+	GameOverManager gameoverManager;
 	Init();
 	while (currentScene != Scene::EXIT)
 	{
-		Update(currentScene,beforeScene,player, scoreManager);
+		Update(currentScene,beforeScene,player, scoreManager, gameoverManager);
 		Render(currentScene);
 	}
 }
@@ -21,7 +23,7 @@ void Core::Init()
 	srand((unsigned int)time(nullptr));
 }
 
-void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager& scoreManager)
+void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager& scoreManager, GameOverManager& gameoverManager)
 {
 	switch (curScene)
 	{
@@ -43,7 +45,7 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager
 		break;
 	case Scene::GAMEOVER:
 		if (CheckSceneInit(befScene, curScene) == false) InitGameOver();
-		OpenGameOverScene(curScene,scoreManager);
+		OpenGameOverScene(curScene,scoreManager, gameoverManager);
 		break;
 	case Scene::EXIT:
 		std::cout << "게임 종료";

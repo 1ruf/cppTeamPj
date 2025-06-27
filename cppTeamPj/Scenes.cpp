@@ -5,6 +5,7 @@
 #include "InfoScene.h"
 #include "CreditScene.h"
 #include "Player.h"
+#include "GameOverManager.h"
 
 void OpenGameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
 {
@@ -16,9 +17,9 @@ void InitGame()
 	GameSceneInit();
 }
 
-void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager)
+void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager,GameOverManager& gameoverManager)
 {
-	GameOverScene(_eCurScene,scoreManager);
+	GameOverScene(_eCurScene,scoreManager, gameoverManager);
 }
 
 void InitGameOver()
