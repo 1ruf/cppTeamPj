@@ -21,6 +21,19 @@ void Core::Init()
 	SetConsoleSettings(900, 900, false, L"HIDER");
 	SetCursorVisual(false, 20);
 	srand((unsigned int)time(nullptr));
+
+	COORD res = GetConsoleResolution();
+	std::string target = "Hello, World!";
+	std::string output = "";
+	for (int i = 0; i < target.size(); ++i)
+	{
+		Gotoxy(res.X / 2 - i / 2, res.Y / 2);
+		output += target[i];
+		cout << output;
+		Sleep(20);
+	}
+	Sleep(500);
+	system("cls");
 }
 
 void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager& scoreManager, GameOverManager& gameoverManager)
@@ -32,7 +45,7 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager
 		OpenTitleScene(curScene);
 		break;
 	case Scene::GAME:
-		if (CheckSceneInit(befScene, curScene) == false) InitGame(scoreManager);
+		if (CheckSceneInit(befScene, curScene) == false) InitGame(scoreManager, player);
 		OpenGameScene(curScene, player, scoreManager);
 		break;
 	case Scene::CREDIT:

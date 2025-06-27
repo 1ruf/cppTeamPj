@@ -29,6 +29,7 @@ public:
 	CUR_MOVE GetDirection() { return curMove; }
 	COORD GetPosition() { return currentPos; }
 
+	void ResetPlayer();
 	void SetPlayerColor(COLOR color,float duration);
 	void SetPlayerColor(COLOR color);
 	void SetDirection(CUR_MOVE direction) { curMove = direction; }

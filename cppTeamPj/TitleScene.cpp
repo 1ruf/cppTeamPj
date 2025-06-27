@@ -9,6 +9,7 @@ void TitleScene(Scene& _eCurScene)
 
 void TitleSceneInit()
 {
+	Sleep(300);
 	RenderBox(selectIndex);
 }
 

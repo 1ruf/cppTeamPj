@@ -10,7 +10,7 @@
 
 void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager);
 
-void GameSceneInit(ScoreManager& scoreManager);
+void GameSceneInit(ScoreManager& scoreManager, Player& player);
 void GameSceneUpdate(Scene& _eCurScene, Player& player, ScoreManager& scoreManager);
 void GameSceneRender();
 

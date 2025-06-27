@@ -7,6 +7,13 @@ Player::Player(const string& visual,Scene* scene)
 	objectVisual = visual;
 	life = 3;
 }
+void Player::ResetPlayer()
+{
+	life = 3;
+	playerColor = COLOR::WHITE;
+	currentPos = { 0,0 };
+	curMove = CUR_MOVE::UP;
+}
 void Player::SetPlayerColor(COLOR color, float duration)
 {
 	SetPlayerColor(color);

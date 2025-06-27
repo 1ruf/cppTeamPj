@@ -8,9 +8,10 @@ void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
 	GameSceneUpdate(_eCurScene,player, scoreManager);
 }
 
-void GameSceneInit(ScoreManager& scoreManager)
+void GameSceneInit(ScoreManager& scoreManager, Player& player)
 {
 	scoreManager.ScoreRender();
+	player.ResetPlayer();
 }
 
 void GameSceneUpdate(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
