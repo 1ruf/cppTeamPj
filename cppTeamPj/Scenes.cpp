@@ -12,9 +12,9 @@ void OpenGameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager
 	GameScene(_eCurScene, player,scoreManager);
 }
 
-void InitGame()
+void InitGame(ScoreManager& scoreManager)
 {
-	GameSceneInit();
+	GameSceneInit(scoreManager);
 }
 
 void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager,GameOverManager& gameoverManager)

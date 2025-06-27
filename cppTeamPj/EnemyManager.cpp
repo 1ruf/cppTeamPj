@@ -34,8 +34,8 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 				if (enemyCount >= 3)
 				{
 					scoreManager.ScoreUp(1);
-					DownSpawnTime(0.005f);
-					DownMoveTime(0.00015f);
+					DownSpawnTime(0.0051f);
+					DownMoveTime(0.00012f);
 				}
 			}
 			else if (iterator->CheckPlayer(player.GetPosition()))
@@ -61,8 +61,8 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 			{
 				iterator = shieldEnemies.erase(iterator);
 				scoreManager.ScoreUp(1);
-				DownSpawnTime(0.005f);
-				DownMoveTime(0.00015f);
+				DownSpawnTime(0.0051f);
+				DownMoveTime(0.00012f);
 			}
 			else
 			{

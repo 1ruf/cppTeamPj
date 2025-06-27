@@ -1,5 +1,4 @@
 #include "GameScene.h"
-#include "ScoreManager.h"
 
 EnemyManager enemyManager;
 
@@ -9,9 +8,9 @@ void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
 	GameSceneUpdate(_eCurScene,player, scoreManager);
 }
 
-void GameSceneInit()
+void GameSceneInit(ScoreManager& scoreManager)
 {
-	
+	scoreManager.ScoreRender();
 }
 
 void GameSceneUpdate(Scene& _eCurScene, Player& player, ScoreManager& scoreManager)
