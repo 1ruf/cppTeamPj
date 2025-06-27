@@ -8,7 +8,8 @@ using std::string;
 
 class Enemy : public Entity
 {
-private:
+protected:
+
 	struct Visual
 	{
 		string rightMoveVisual = "ก็";
@@ -27,6 +28,7 @@ private:
 		DOWN
 	};
 
+
 	Visual visual;
 	Direction direction;
 	COORD currentPos;
@@ -43,7 +45,7 @@ public:
 
 	virtual void Move() override;
 
-	void Render();
+	virtual void Render();
 	void Erase();
 
 	bool CheckShield();

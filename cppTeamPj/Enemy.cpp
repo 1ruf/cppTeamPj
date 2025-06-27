@@ -44,10 +44,9 @@ void Enemy::Move()
 	Render();
 }
 
+
 void Enemy::Render()
 {
-	Gotoxy(currentPos.X, currentPos.Y);
-	std::cout << objectVisual;
 }
 
 void Enemy::Erase()

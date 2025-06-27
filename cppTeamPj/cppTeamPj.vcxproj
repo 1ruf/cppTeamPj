@@ -143,9 +143,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerContoller.cpp" />
+    <ClCompile Include="PlayerEnemy.cpp" />
     <ClCompile Include="Scenes.cpp" />
     <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="Sheild.cpp" />
+    <ClCompile Include="ShieldEnemy.cpp" />
     <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,9 +166,11 @@
     <ClInclude Include="KeyContoller.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerContoller.h" />
+    <ClInclude Include="PlayerEnemy.h" />
     <ClInclude Include="Scenes.h" />
     <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="Sheild.h" />
+    <ClInclude Include="ShieldEnemy.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>

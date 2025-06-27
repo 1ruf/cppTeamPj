@@ -87,7 +87,7 @@ void RenderLogo(Scene curScene,GameOverManager& manager)
 		logoColor = COLOR::GRAY;
 		break;
 	case 5:
-		logoColor == COLOR::LIGHT_GRAY;
+		logoColor = COLOR::LIGHT_GRAY;
 		break;
 	default:
 		break;

@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
-#include "Enemy.h"
+#include "PlayerEnemy.h"
+#include "ShieldEnemy.h"
 #include "Player.h"
 #include <chrono>
 #include "ScoreManager.h"
@@ -8,7 +9,8 @@
 class EnemyManager
 {
 private:
-    std::vector<Enemy> enemies;
+    std::vector<PlayerEnemy> playerEnemies;
+    std::vector<ShieldEnemy> shieldEnemies;
 
     float spawnTime = 1.0f;
 
