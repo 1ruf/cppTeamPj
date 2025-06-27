@@ -17,3 +17,5 @@ private:
 	void Render(Scene &curScene);
 };
 
+bool CheckSceneInit(Scene& befScene, Scene& curScene);
+

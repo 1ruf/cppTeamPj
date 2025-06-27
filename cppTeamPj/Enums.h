@@ -6,5 +6,5 @@ enum class Key
 
 enum class Scene
 {
-	MENU, GAME, GAMEOVER,CREDIT, INFO, PAUSE, EXIT, FAIL
+	MENU, GAME, GAMEOVER,CREDIT, INFO, EXIT, FAIL
 };
