@@ -24,6 +24,7 @@ void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager,GameOverMana
 
 void InitGameOver()
 {
+	system("cls");
 	GameOverInit();
 }
 
@@ -33,6 +34,7 @@ void OpenTitleScene(Scene& _eCurScene)
 }
 void InitTitle()
 {
+	system("cls");
 	TitleSceneInit();
 }
 void OpenInfoScene(Scene& _eCurScene)
@@ -41,6 +43,7 @@ void OpenInfoScene(Scene& _eCurScene)
 }
 void InitInfo()
 {
+	system("cls");
 	InfoSceneInit();
 }
 void OpenCreditScene(Scene& _eCurScene)
@@ -50,5 +53,6 @@ void OpenCreditScene(Scene& _eCurScene)
 
 void InitCredit()
 {
+	system("cls");
 	InfoSceneInit();
 }

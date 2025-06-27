@@ -34,6 +34,5 @@ void CreditSceneExit(Scene& _eCurScene)
 	if (eKey == Key::ESC)
 	{
 		_eCurScene = Scene::MENU;
-		system("cls");
 	}
 }

@@ -110,11 +110,10 @@ Scene TitleSceneInput()
 		Sleep(150);
 		break;
 	case Key::SPACE:
-		system("cls");
 		if (selectIndex == 0)
 		{
-			CrossAnimation(GetConsoleResolution(),1);
 			system("cls");
+			CrossAnimation(GetConsoleResolution(),1);
 			return Scene::GAME;
 		}
 		else if (selectIndex == 1)return Scene::INFO;
