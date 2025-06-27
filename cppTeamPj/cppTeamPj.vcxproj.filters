@@ -74,6 +74,9 @@
       <Filter>04.Scene</Filter>
     </ClCompile>
     <ClCompile Include="ScoreManager.cpp" />
+    <ClCompile Include="GameOverScene.cpp">
+      <Filter>04.Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
@@ -121,7 +124,15 @@
     <ClInclude Include="CreditScene.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
-    <ClInclude Include="ScoreManager.h" />
+    <ClInclude Include="IHitable.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreManager.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverScene.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

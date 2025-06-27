@@ -1,6 +1,7 @@
 #include "Scenes.h"
 #include "GameScene.h"
 #include "TitleScene.h"
+#include "GameOverScene.h"
 #include "InfoScene.h"
 #include "CreditScene.h"
 #include "Player.h"
@@ -13,6 +14,16 @@ void OpenGameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager
 void InitGame()
 {
 	GameSceneInit();
+}
+
+void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager)
+{
+	GameOverScene(_eCurScene,scoreManager);
+}
+
+void InitGameOver()
+{
+	GameOverInit();
 }
 
 void OpenTitleScene(Scene& _eCurScene)

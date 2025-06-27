@@ -1,8 +1,9 @@
 #include "Player.h"
 #include "PlayerContoller.h"
 
-Player::Player(const string& visual)
+Player::Player(const string& visual,Scene* scene)
 {
+	visualScene = scene;
 	objectVisual = visual;
 	life = 3;
 }
@@ -66,12 +67,12 @@ void Player::Hit()
 	life = life - 1;
 	if (life <= 0)
 	{
-		GameOverAnimation(.8f);
+		GameOverAnimation(.8f,visualScene);
 	}
 	cout << life;
 }
 
-void GameOverAnimation(float delayTime)
+void GameOverAnimation(float delayTime,Scene* visualScene)
 {
 	COORD resolution = GetConsoleResolution();
 	SetColor(COLOR::WHITE, COLOR::WHITE);
@@ -105,4 +106,6 @@ void GameOverAnimation(float delayTime)
 		}
 		Sleep(delayTime);
 	}
+
+	*visualScene = Scene::GAMEOVER;
 }

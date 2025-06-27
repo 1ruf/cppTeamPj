@@ -4,7 +4,7 @@ void Core::Run()
 {
 	Scene currentScene = Scene::MENU;
 	Scene beforeScene = Scene::FAIL;
-	Player player("¡Ü");
+	Player player("¡Ü",&currentScene);
 	ScoreManager scoreManager;
 	Init();
 	while (currentScene != Scene::EXIT)
@@ -16,7 +16,7 @@ void Core::Run()
 
 void Core::Init()
 {
-	SetConsoleSettings(800, 800, false, L"HIDER");
+	SetConsoleSettings(900, 900, false, L"HIDER");
 	SetCursorVisual(false, 20);
 	srand((unsigned int)time(nullptr));
 }
@@ -41,7 +41,8 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager
 		break;
 	case Scene::GAMEOVER:
 		Gotoxy(0, 0);
-		cout << "GAME OVER";
+		if (befScene != curScene) InitGameOver();
+		OpenGameOverScene(curScene,scoreManager);
 		break;
 	case Scene::PAUSE:
 		break;

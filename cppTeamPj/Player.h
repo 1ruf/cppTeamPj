@@ -22,7 +22,9 @@ private:
 	COORD currentPos;
 	CUR_MOVE curMove{ CUR_MOVE::UP };
 public:
-	Player(const string& visual);
+	Scene* visualScene;
+
+	Player(const string& visual,Scene* visualScene);
 
 	CUR_MOVE GetDirection() { return curMove; }
 	COORD GetPosition() { return currentPos; }
@@ -40,7 +42,7 @@ public:
 	// IHitable상속 (저거 순수가상함수라 무조건 구현&상속으로만 구현ㄱㄴ)
 	void Hit() override;
 };
-void GameOverAnimation(float delayTime);
+void GameOverAnimation(float delayTime,Scene* visualScene);
 
 
 

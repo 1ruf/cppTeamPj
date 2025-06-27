@@ -5,6 +5,8 @@
 
 void OpenGameScene(Scene& _eCurScene,Player& player, ScoreManager& scoreManager);
 void InitGame();
+void OpenGameOverScene(Scene& _eCurScene, ScoreManager scoreManager);
+void InitGameOver();
 void OpenTitleScene(Scene& _eCurScene);
 void InitTitle();
 void OpenInfoScene(Scene& _eCurScene);
