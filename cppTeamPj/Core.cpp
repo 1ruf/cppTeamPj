@@ -26,25 +26,24 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager
 	switch (curScene)
 	{
 	case Scene::MENU:
-		if (befScene != curScene) InitTitle();
+		if (CheckSceneInit(befScene,curScene) == false) InitTitle();
 		OpenTitleScene(curScene);
 		break;
 	case Scene::GAME:
+		if (CheckSceneInit(befScene, curScene) == false) InitGame();
 		OpenGameScene(curScene, player, scoreManager);
 		break;
 	case Scene::CREDIT:
+		if (CheckSceneInit(befScene, curScene) == false) InitCredit();
 		OpenCreditScene(curScene);
 		break;
 	case Scene::INFO:
-		if (befScene != curScene) InitInfo();
+		if (CheckSceneInit(befScene, curScene) == false) InitInfo();
 		OpenInfoScene(curScene);
 		break;
 	case Scene::GAMEOVER:
-		Gotoxy(0, 0);
-		if (befScene != curScene) InitGameOver();
+		if (CheckSceneInit(befScene, curScene) == false) InitGameOver();
 		OpenGameOverScene(curScene,scoreManager);
-		break;
-	case Scene::PAUSE:
 		break;
 	case Scene::EXIT:
 		std::cout << "게임 종료";
@@ -54,10 +53,16 @@ void Core::Update(Scene& curScene, Scene& befScene, Player& player, ScoreManager
 	default:
 		break;
 	}
-	befScene = curScene;
 }
 
 void Core::Render(Scene& curScene)
 {
 	
+}
+
+bool CheckSceneInit(Scene& befScene, Scene& curScene)
+{
+	bool result = befScene == curScene;
+	if (result == false) befScene = curScene;
+	return result;
 }

@@ -8,6 +8,7 @@ void InfoScene(Scene& _eCurScene)
 
 void InfoSceneInit()
 {
+	system("cls");
 }
 
 void InfoSceneUpdate(Scene& _eCurScene)
