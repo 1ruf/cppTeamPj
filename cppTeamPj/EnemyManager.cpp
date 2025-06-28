@@ -34,8 +34,16 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 				if (enemyCount >= 3)
 				{
 					scoreManager.ScoreUp(1);
-					DownSpawnTime(0.0051f);
-					DownMoveTime(0.00012f);
+					if (scoreManager.GetScore() < 90)
+					{
+						DownSpawnTime(0.0051f);
+						DownMoveTime(0.00012f);
+					}
+					else
+					{
+						DownSpawnTime(0.0022f);
+						DownMoveTime(0.00004f);
+					}
 				}
 			}
 			else if (iterator->CheckPlayer(player.GetPosition()))
@@ -61,8 +69,16 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 			{
 				iterator = shieldEnemies.erase(iterator);
 				scoreManager.ScoreUp(1);
-				DownSpawnTime(0.0051f);
-				DownMoveTime(0.00012f);
+				if (scoreManager.GetScore() < 90)
+				{
+					DownSpawnTime(0.0051f);
+					DownMoveTime(0.00012f);
+				}
+				else
+				{
+					DownSpawnTime(0.0022f);
+					DownMoveTime(0.00004f);
+				}
 			}
 			else
 			{
@@ -80,7 +96,7 @@ void EnemyManager::SpawnEnemy()
 {
 	int randNum = rand() % 10;
 
-	if (randNum >= 2)
+	if (randNum >= 3)
 	{
 
 		int arr[4] = {};
@@ -128,5 +144,7 @@ void EnemyManager::Initialize()
 	isFirstUpdate = true;
 	spawnTime = defaultSpawnTime;
 	moveTime = defaultMoveTime;
+	playerEnemies.clear();
+	shieldEnemies.clear();
 }
 

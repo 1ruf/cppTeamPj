@@ -9,6 +9,7 @@ void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager, En
 
 void GameSceneInit(ScoreManager& scoreManager, Player& player, EnemyManager& enemyManager)
 {
+	system("cls");
 	scoreManager.Initialize();
 	enemyManager.Initialize();
 	scoreManager.ScoreRender();
