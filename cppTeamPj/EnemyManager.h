@@ -24,10 +24,13 @@ private:
 
     float spawnDownHigh = 0.0051f;
     float moveDownHigh = 0.00012f;
-    float spawnDownLow = 0.0022f;
-    float moveDownLow = 0.00004f;
+    float spawnDownMid = 0.0022f;
+    float moveDownMid = 0.00004f;
+    float spawnDownLow = 0.001f;
+    float moveDownLow = 0.00002f;
 
-    int DifficultyLevelPoint = 90;
+    int DifficultyLevelPointLow = 90;
+    int DifficultyLevelPointHigh = 170;
 
     std::chrono::high_resolution_clock::time_point lastUpdateTime;
 

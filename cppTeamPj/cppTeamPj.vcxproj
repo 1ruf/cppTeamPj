@@ -141,6 +141,7 @@
     <ClCompile Include="InfoScene.cpp" />
     <ClCompile Include="KeyContoller.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mci.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerContoller.cpp" />
     <ClCompile Include="PlayerEnemy.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="IHitable.h" />
     <ClInclude Include="InfoScene.h" />
     <ClInclude Include="KeyContoller.h" />
+    <ClInclude Include="Mci.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerContoller.h" />
     <ClInclude Include="PlayerEnemy.h" />
