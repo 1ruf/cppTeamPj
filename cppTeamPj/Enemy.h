@@ -1,8 +1,8 @@
 #pragma once
-#include <windows.h>
 #include <string>
-#include <iostream>
 #include "Entity.h"
+#include <windows.h>
+
 
 using std::string;
 
@@ -29,10 +29,10 @@ protected:
 	};
 
 
-	Visual visual;
-	Direction direction;
 	COORD currentPos;
 	COORD shieldPos;
+	Direction direction;
+	Visual visual;
 
 public:
 

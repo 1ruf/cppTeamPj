@@ -1,18 +1,26 @@
 #include "EnemyManager.h"
 
 
-void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
+void EnemyManager::LevelUp(ScoreManager& scoreManager)
 {
-	auto currentTime = std::chrono::high_resolution_clock::now();
-	float deltaTime = 0.0f;
-	if (!isFirstUpdate)
+	scoreManager.ScoreUp(1);
+	if (scoreManager.GetScore() < DifficultyLevelPoint)
 	{
-		deltaTime = std::chrono::duration<float>(currentTime - lastUpdateTime).count();
+		DownSpawnTime(spawnDownLow);
+		DownMoveTime(moveDownLow);
 	}
 	else
 	{
-		isFirstUpdate = false;
+		DownSpawnTime(spawnDownHigh);
+		DownMoveTime(moveDownHigh);
 	}
+}
+
+void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
+{
+	auto currentTime = std::chrono::high_resolution_clock::now();
+	float deltaTime = std::chrono::duration<float>(currentTime - lastUpdateTime).count();
+	lastUpdateTime = currentTime;
 
 	spawnTimer += deltaTime;
 	if (spawnTimer >= spawnTime)
@@ -33,17 +41,7 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 				enemyCount++;
 				if (enemyCount >= 3)
 				{
-					scoreManager.ScoreUp(1);
-					if (scoreManager.GetScore() < 90)
-					{
-						DownSpawnTime(0.0051f);
-						DownMoveTime(0.00012f);
-					}
-					else
-					{
-						DownSpawnTime(0.0022f);
-						DownMoveTime(0.00004f);
-					}
+					LevelUp(scoreManager);
 				}
 			}
 			else if (iterator->CheckPlayer(player.GetPosition()))
@@ -68,17 +66,7 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 			else if (iterator->CheckPlayer(player.GetPosition()))
 			{
 				iterator = shieldEnemies.erase(iterator);
-				scoreManager.ScoreUp(1);
-				if (scoreManager.GetScore() < 90)
-				{
-					DownSpawnTime(0.0051f);
-					DownMoveTime(0.00012f);
-				}
-				else
-				{
-					DownSpawnTime(0.0022f);
-					DownMoveTime(0.00004f);
-				}
+				LevelUp(scoreManager);
 			}
 			else
 			{
@@ -141,7 +129,8 @@ void EnemyManager::DownMoveTime(float downTime)
 
 void EnemyManager::Initialize()
 {
-	isFirstUpdate = true;
+	lastUpdateTime = std::chrono::high_resolution_clock::now();
+	spawnTimer = moveTimer = 0.0f;
 	spawnTime = defaultSpawnTime;
 	moveTime = defaultMoveTime;
 	playerEnemies.clear();

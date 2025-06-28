@@ -30,21 +30,14 @@ void ScoreManager::ScoreRender()
 	coord.X = 2;
 	coord.Y = 5;
 	scoreText = std::to_string(score);
-    for (char c : scoreText)
-    {
-        int idx = c - '0';
-
-        std::wistringstream stream(scoreTexts[idx]);
-        std::wstring line;
-        int lineNum = 0;
-
-        while (std::getline(stream, line)) {
-            Gotoxy(coord.X, coord.Y + lineNum);
-            wcout << line;
-            lineNum++;
-        }
-        coord.X += 6;
-    }
+	for (char c : scoreText) {
+		int idx = c - '0';
+		for (int line = 0; line < 4; ++line) {
+			Gotoxy(coord.X, coord.Y + line);
+			wcout << scoreTexts[idx][line];
+		}
+		coord.X += 6;
+	}
 	int curmode = _setmode(_fileno(stdout), prevmode);
 }
 

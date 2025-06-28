@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "Console.h"
-#include "Sheild.h"
+#include <iostream>
+
 
 void Enemy::SetEnemy(int randNum)
 {
@@ -55,7 +56,7 @@ void Enemy::Erase()
 	std::cout << "  ";
 }
 
-bool operator==(const COORD& FistCoord, const COORD& SecondCoord)
+inline bool operator==(const COORD& FistCoord, const COORD& SecondCoord)
 {
 	return FistCoord.X == SecondCoord.X && FistCoord.Y == SecondCoord.Y;
 }

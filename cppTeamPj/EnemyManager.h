@@ -22,8 +22,16 @@ private:
 
     float moveTimer = 0.0f;
 
+    float spawnDownHigh = 0.0051f;
+    float moveDownHigh = 0.00012f;
+    float spawnDownLow = 0.0022f;
+    float moveDownLow = 0.00004f;
+
+    int DifficultyLevelPoint = 90;
+
     std::chrono::high_resolution_clock::time_point lastUpdateTime;
-    bool isFirstUpdate = true;
+
+    void LevelUp(ScoreManager& scoreManager);
 
 public:
     void EnemyUpdate(ScoreManager& scoreManager, Player& player);
