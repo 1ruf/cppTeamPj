@@ -1,4 +1,5 @@
 ﻿#include "TitleScene.h"
+#include "Mci.h"
 int selectIndex = 0;
 
 void TitleScene(Scene& _eCurScene)
@@ -9,6 +10,7 @@ void TitleScene(Scene& _eCurScene)
 
 void TitleSceneInit()
 {
+	PlaySoundID(SOUNDID::TitleBGM, true);
 	Sleep(300);
 	RenderBox(selectIndex);
 }
@@ -113,6 +115,7 @@ Scene TitleSceneInput()
 	case Key::SPACE:
 		if (selectIndex == 0)
 		{
+			StopSoundID(SOUNDID::TitleBGM);
 			system("cls");
 			CrossAnimation(GetConsoleResolution(),1);
 			return Scene::GAME;

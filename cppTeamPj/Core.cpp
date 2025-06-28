@@ -1,5 +1,6 @@
 #include "Core.h"
 #include "GameOverManager.h"
+#include "Mci.h"
 
 void Core::Run()
 {
@@ -23,6 +24,11 @@ void Core::Init()
 	SetConsoleSettings(900, 900, false, L"HIDER");
 	SetCursorVisual(false, 20);
 	srand((unsigned int)time(nullptr));
+	if (!InitAllSounds())
+	{
+		cout << "사운드 초기화 실패" << endl;
+		return;
+	}
 
 	COORD res = GetConsoleResolution();
 	std::string target = "Hello, World!";

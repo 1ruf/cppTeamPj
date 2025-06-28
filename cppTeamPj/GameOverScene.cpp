@@ -1,6 +1,6 @@
 ﻿#include "GameOverScene.h"
 #include <stdlib.h>
-
+#include "Mci.h"
 #include <fcntl.h>
 #include <io.h>
 #include "Console.h"
@@ -13,6 +13,8 @@ void GameOverScene(Scene& curScene, ScoreManager scoreManager, GameOverManager& 
 
 void GameOverInit()
 {
+	StopSoundID(SOUNDID::GameBGM);
+	PlaySoundID(SOUNDID::Dead, true);
 	system("cls");
 	SidelineRender(0);
 }
@@ -161,6 +163,7 @@ Scene GameSceneInput(int& index)
 		Sleep(100);
 		break;
 	case Key::SPACE:
+		StopSoundID(SOUNDID::Dead);
 		if (index == 0) return Scene::GAME;
 		else if (index == 1)return Scene::MENU;
 		else if (index == 2)return Scene::EXIT;

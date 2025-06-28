@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "Mci.h"
 
 
 void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager, EnemyManager& enemyManager)
@@ -9,6 +10,7 @@ void GameScene(Scene& _eCurScene, Player& player, ScoreManager& scoreManager, En
 
 void GameSceneInit(ScoreManager& scoreManager, Player& player, EnemyManager& enemyManager)
 {
+	PlaySoundID(SOUNDID::GameBGM, true);
 	system("cls");
 	scoreManager.Initialize();
 	enemyManager.Initialize();

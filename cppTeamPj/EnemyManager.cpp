@@ -1,13 +1,19 @@
 #include "EnemyManager.h"
+#include "Mci.h"
 
 
 void EnemyManager::LevelUp(ScoreManager& scoreManager)
 {
 	scoreManager.ScoreUp(1);
-	if (scoreManager.GetScore() < DifficultyLevelPoint)
+	if (scoreManager.GetScore() > DifficultyLevelPointHigh)
 	{
 		DownSpawnTime(spawnDownLow);
 		DownMoveTime(moveDownLow);
+	}
+	else if (scoreManager.GetScore() > DifficultyLevelPointLow)
+	{
+		DownSpawnTime(spawnDownMid);
+		DownMoveTime(moveDownMid);
 	}
 	else
 	{
@@ -41,11 +47,13 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 				enemyCount++;
 				if (enemyCount >= 3)
 				{
+					PlaySoundID(SOUNDID::ShieldHit, false);
 					LevelUp(scoreManager);
 				}
 			}
 			else if (iterator->CheckPlayer(player.GetPosition()))
 			{
+				PlaySoundID(SOUNDID::PlayerDamage, false);
 				player.Hit();
 				iterator = playerEnemies.erase(iterator);
 			}
@@ -60,11 +68,13 @@ void EnemyManager::EnemyUpdate(ScoreManager& scoreManager, Player& player)
 		{
 			if (iterator->CheckShield())
 			{
+				PlaySoundID(SOUNDID::ShieldDamage, false);
 				player.Hit();
 				iterator = shieldEnemies.erase(iterator);
 			}
 			else if (iterator->CheckPlayer(player.GetPosition()))
 			{
+				PlaySoundID(SOUNDID::PlayerHit, false);
 				iterator = shieldEnemies.erase(iterator);
 				LevelUp(scoreManager);
 			}
