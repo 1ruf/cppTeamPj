@@ -24,7 +24,7 @@ void HandleInput(Player& player, Scene& _curScene)
 	case Key::SPACE:
 		break;
 	case Key::ESC:
-		_curScene = Scene::EXIT;
+		_curScene = Scene::MENU;
 		system("cls");
 		break;
 	default:

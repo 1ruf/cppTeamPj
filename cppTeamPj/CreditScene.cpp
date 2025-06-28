@@ -21,11 +21,40 @@ void CreditSceneRender()
 
 	Gotoxy(3, 1);
 	cout << "< 종료:ESC >" << endl;
-	Gotoxy(consoleSize.X / 2 - 8, consoleSize.Y / 2 - 10);
-	cout << "크레딧 페이지입니다." << endl;
-	cout << "이 게임은 C++로 제작된 콘솔 게임입니다." << endl;
-	cout << "개발자: Mr.ChanMinLee | 고한1결" << endl;
-	cout << "감사합니다!" << endl;
+	Gotoxy(0, consoleSize.Y / 2 - 20);
+	cout << "기획자 : 고한결, 이찬민" << endl;
+	cout << "제작자 : 고한결, 이찬민" << endl;
+	cout << "디자인 : 고한결, 이찬민\n\n\n" << endl;
+	cout << "???:고한결이랑 이찬민이 다만들었네 ㄷㄷ 나머지 팀원들 다 뭐함?" << endl;
+
+	cout << "                          /-                                   " << endl;
+	cout << "                          \|                                   " << endl;
+	cout << "                        __________                             " << endl;
+	cout << "                                  ---___                       " << endl;
+	cout << "                                        ---\                   " << endl;
+	cout << "                                            \/--/              " << endl;
+	cout << "                                            /  /--\            " << endl;
+	cout << "                                           /  /    \           " << endl;
+	cout << "                                          /  /      |          " << endl;
+	cout << "                                         /  /       |          " << endl;
+	cout << "                                         | ||       |          " << endl;
+	cout << "                                         \ \|       \          " << endl;
+	cout << "                                          \ |        |         " << endl;
+	cout << "                                           -|        \         " << endl;
+	cout << "                                           /         |         " << endl;
+	cout << "                                          |          |         " << endl;
+	cout << "                                         /           \         " << endl;
+	cout << "                                         |            \        " << endl;
+	cout << "                                        /              \       " << endl;
+	cout << "                                        |              |       " << endl;
+	cout << "                                        |              |       " << endl;
+	cout << "                                         \             /       " << endl;
+	cout << "                                          \-|         /        " << endl;
+	cout << "                                            /      /--         " << endl;
+	cout << "                                           ---------           " << endl;
+	cout << "                                                   " << endl;
+	Gotoxy(consoleSize.X / 2, consoleSize.Y / 2 + 20);
+	cout << "\n플레이 해주셔서 감사합니다!" << endl;
 }
 
 void CreditSceneExit(Scene& _eCurScene)
