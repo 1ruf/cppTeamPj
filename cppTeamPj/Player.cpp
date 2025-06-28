@@ -68,6 +68,48 @@ void Player::PlayerRender(Player plr)
 	std::cout << plr.objectVisual;
 }
 
+void Player::RenderHpInit(COORD pos)
+{
+	Gotoxy(pos.X, pos.Y);
+	cout << " __ __ _____                   " << endl;
+	cout << "|  |  |  -  |                  " << endl;
+	cout << "|     |   __|                  " << endl;
+	cout << "|__|__|__|                     " << endl;
+	cout << " _____________________________ " << endl;
+	cout << "|                             |" << endl;
+	cout << "|                             |" << endl;
+	cout << "|                             |" << endl;
+	cout << "|_____________________________|" << endl;
+
+}
+
+void Player::RenderHp(COORD pos)
+{
+	COORD curHpRender = pos;
+	for (int i = 0; i < 3; ++i)
+	{
+		curHpRender.X = pos.X + 4 + (10 * i);
+		curHpRender.Y = pos.Y + 6;
+
+		Gotoxy(curHpRender.X, curHpRender.Y);
+		if (i < life)
+		{
+			SetColor(COLOR::WHITE, COLOR::WHITE);
+			cout << "    ";
+			Gotoxy(curHpRender.X, curHpRender.Y + 1);
+			cout << "    ";
+		}
+		else
+		{
+			SetColor(COLOR::BLACK, COLOR::BLACK);
+			cout << "    ";
+			Gotoxy(curHpRender.X, curHpRender.Y + 1);
+			cout << "    ";
+		}
+		SetColor();
+	}
+}
+
 void Player::Hit()
 {
 	SetPlayerColor(COLOR::RED, 100);
@@ -76,7 +118,6 @@ void Player::Hit()
 	{
 		GameOverAnimation(.8f,visualScene);
 	}
-	cout << life;
 }
 
 void GameOverAnimation(float delayTime,Scene* visualScene)
