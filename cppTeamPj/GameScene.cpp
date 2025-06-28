@@ -14,13 +14,18 @@ void GameSceneInit(ScoreManager& scoreManager, Player& player, EnemyManager& ene
 	enemyManager.Initialize();
 	scoreManager.ScoreRender();
 	player.ResetPlayer();
+
+	COORD hpUIpos{ 0, 10 };
+	player.RenderHpInit(hpUIpos);
 }
 
 void GameSceneUpdate(Scene& _eCurScene, Player& player, ScoreManager& scoreManager, EnemyManager& enemyManager)
 {
 	enemyManager.EnemyUpdate(scoreManager, player);
 	player.PlayerControl(player,_eCurScene);
-	player.GetPosition();//위치 가져오는거임 @이찬민
+
+	COORD hpUIpos{ 0, 10 };
+	player.RenderHp(hpUIpos);
 }
 
 void GameSceneRender()
