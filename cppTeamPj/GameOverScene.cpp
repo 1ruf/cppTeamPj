@@ -29,7 +29,7 @@ void GameOverUpdate(Scene& curScene, ScoreManager scoreManager, GameOverManager&
 void GameOverRender(Scene curScene, ScoreManager scoreManager,GameOverManager& gameoverManager)
 {
 	COORD consoleSize = GetConsoleResolution();
-	Gotoxy(consoleSize.X / 2 - 20, consoleSize.Y / 2 + 5);
+	Gotoxy(consoleSize.X / 2 - 3, consoleSize.Y / 2 + 5);
 	cout << "SCORE : " << scoreManager.GetScore();
 	
 	RenderLogo(curScene, gameoverManager);

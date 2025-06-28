@@ -86,6 +86,7 @@
     <ClCompile Include="ShieldEnemy.cpp">
       <Filter>03.Object</Filter>
     </ClCompile>
+    <ClCompile Include="Mci.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
@@ -149,10 +150,6 @@
     <ClInclude Include="ShieldEnemy.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
+    <ClInclude Include="Mci.h" />
   </ItemGroup>
 </Project>
