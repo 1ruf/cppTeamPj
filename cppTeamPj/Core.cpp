@@ -31,14 +31,14 @@ void Core::Init()
 	}
 
 	COORD res = GetConsoleResolution();
-	std::string target = "Hello, World!";
+	std::string target = "YOUSOT";
 	std::string output = "";
 	for (int i = 0; i < target.size(); ++i)
 	{
 		Gotoxy(res.X / 2 - i / 2, res.Y / 2);
 		output += target[i];
 		cout << output;
-		Sleep(20);
+		Sleep(50);
 	}
 	Sleep(500);
 	system("cls");

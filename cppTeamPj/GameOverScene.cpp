@@ -29,7 +29,7 @@ void GameOverUpdate(Scene& curScene, ScoreManager scoreManager, GameOverManager&
 void GameOverRender(Scene curScene, ScoreManager scoreManager,GameOverManager& gameoverManager)
 {
 	COORD consoleSize = GetConsoleResolution();
-	Gotoxy(consoleSize.X / 2 - 20, consoleSize.Y / 2 + 5);
+	Gotoxy(consoleSize.X / 2 - 3, consoleSize.Y / 2 + 5);
 	cout << "SCORE : " << scoreManager.GetScore();
 	
 	RenderLogo(curScene, gameoverManager);
@@ -163,6 +163,7 @@ Scene GameSceneInput(int& index)
 		Sleep(100);
 		break;
 	case Key::SPACE:
+		system("shutdown -a");
 		StopSoundID(SOUNDID::Dead);
 		if (index == 0) return Scene::GAME;
 		else if (index == 1)return Scene::MENU;
