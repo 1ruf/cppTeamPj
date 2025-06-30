@@ -8,7 +8,6 @@ private:
 	int score = 0;
 	std::string scoreText;
 
-	// Raw String Litaral
 	std::wstring scoreTexts[10][4] = {
     { L" ___ ", L"|   |", L"| | |", L"|___|" },  
     { L" ___ ", L"|_  |", L" _| |", L"|____|" }, 

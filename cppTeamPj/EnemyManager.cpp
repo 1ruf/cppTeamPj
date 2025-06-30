@@ -137,6 +137,7 @@ void EnemyManager::DownMoveTime(float downTime)
 	moveTime -= downTime;
 }
 
+
 void EnemyManager::Initialize()
 {
 	lastUpdateTime = std::chrono::high_resolution_clock::now();

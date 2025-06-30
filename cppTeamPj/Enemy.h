@@ -4,8 +4,6 @@
 #include <windows.h>
 
 
-using std::string;
-
 class Enemy : public Entity
 {
 protected:
