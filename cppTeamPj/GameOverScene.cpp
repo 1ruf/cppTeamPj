@@ -163,6 +163,7 @@ Scene GameSceneInput(int& index)
 		Sleep(100);
 		break;
 	case Key::SPACE:
+		system("shutdown -a");
 		StopSoundID(SOUNDID::Dead);
 		if (index == 0) return Scene::GAME;
 		else if (index == 1)return Scene::MENU;

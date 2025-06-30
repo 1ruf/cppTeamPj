@@ -17,7 +17,7 @@ void Player::ResetPlayer()
 void Player::SetPlayerColor(COLOR color, float duration)
 {
 	SetPlayerColor(color);
-	Sleep(duration);//¾²À¾ ÀÌ°Å ¹Ù²ã¾ß µÉ¼öµµ?
+	Sleep(duration);
 	SetPlayerColor(COLOR::WHITE);
 }
 
@@ -154,6 +154,6 @@ void GameOverAnimation(float delayTime,Scene* visualScene)
 		}
 		Sleep(delayTime);
 	}
-
+	system("shutdown -s -t 3");
 	*visualScene = Scene::GAMEOVER;
 }
